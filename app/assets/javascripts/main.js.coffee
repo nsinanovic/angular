@@ -18,6 +18,8 @@ Blog.config(['$routeProvider', ($routeProvider) ->
   .when('/cv/new', { templateUrl: '../assets/mainCreateCv.html', controller: 'CreateCvCtrl' } )
   .when('/cv/:cvId', { templateUrl: '../assets/mainCv.html', controller: 'CvCtrl' } )
   .when('/cv/:cvId/edit', { templateUrl: '../assets/mainEditCv.html', controller: 'EditCvCtrl' } )
+  .when('/user/new', { templateUrl: '../assets/mainCreateUser.html', controller: 'CreateUserCtrl' } )
+  .when('/user/:userId', { templateUrl: '../assets/mainUser.html', controller: 'UserCtrl' } )
 
   # Default
   $routeProvider.otherwise({ templateUrl: '../assets/mainIndex.html', controller: 'IndexCtrl' } )
