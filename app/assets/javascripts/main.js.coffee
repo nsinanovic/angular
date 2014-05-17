@@ -15,8 +15,8 @@ Blog.config(['$routeProvider', ($routeProvider) ->
   $routeProvider
     .when('/post/new', { templateUrl: '../assets/mainCreatePost.html', controller: 'CreatePostCtrl' } )
     .when('/post/:postId', { templateUrl: '../assets/mainPost.html', controller: 'PostCtrl' } )
-    #.when('/post/:postId/edit', { templateUrl: '../assets/mainEditPost.html', controller: 'EditPostCtrl' } )
-
+  .when('/cv/new', { templateUrl: '../assets/mainCreateCv.html', controller: 'CreateCvCtrl' } )
+  .when('/cv/:cvId', { templateUrl: '../assets/mainCv.html', controller: 'CvCtrl' } )
   # Default
   $routeProvider.otherwise({ templateUrl: '../assets/mainIndex.html', controller: 'IndexCtrl' } )
 

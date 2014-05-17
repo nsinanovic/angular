@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  resources :cvs
+
   root to: 'main#index'
 
   resources :posts

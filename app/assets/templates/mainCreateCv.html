@@ -1,0 +1,22 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <a ng-click="navHome()" class="brand">My blog</a>
+    <ul class="nav pull-right">
+      <li><a ng-click="navNewCv()">New Post</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 40px">
+  <h1 class="text-center">Create new cv</h1>
+  <form>
+    <fieldset>
+      <label><strong>Title</strong></label>
+      <input class="span12" ng-model="formData.newCvNaslov" placeholder="New Cv" type="text" maxlength="250">
+      <label><strong>Description</strong></label>
+      <textarea class="span12" style="height: 250px" ng-model="formData.newCvDodatno" placeholder="Type your personal skills here..."></textarea>
+      <button class="btn btn-primary" ng-click="createCv()">Create</button>
+      <button class="btn btn-danger pull-right" ng-click="clearCv()">Clear cv</button>
+    </fieldset>
+  </form>
+</div>
