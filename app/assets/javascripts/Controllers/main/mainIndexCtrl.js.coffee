@@ -1,13 +1,13 @@
-@IndexCtrl = ($scope, $location, $http, postData) ->
+@IndexCtrl = ($scope, $location, $http, advartismentData) ->
 
-  $scope.data = postData.data
+  $scope.data = advartismentData.data
 
-  postData.loadPosts(null)
+  advartismentData.loadAdvartisments(null)
 
-  $scope.viewPost = (postId) ->
-    $location.url('/post/'+postId)
+  $scope.viewAdvartisment = (advartismentId) ->
+    $location.url('/advartisment/'+advartismentId)
 
-  $scope.navNewPost = ->
-    $location.url('/post/new')
+  $scope.navNewAdvartisment = ->
+    $location.url('/advartisment/new')
 
-@IndexCtrl.$inject = ['$scope', '$location', '$http', 'postData']
+@IndexCtrl.$inject = ['$scope', '$location', '$http', 'advartismentData']
