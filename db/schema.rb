@@ -11,21 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140518101229) do
+ActiveRecord::Schema.define(version: 20140517164842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "advartisments", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.date     "published"
-    t.date     "expire"
-    t.string   "location"
-    t.string   "category"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "cvs", force: true do |t|
     t.string   "naslov"

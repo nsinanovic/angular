@@ -12,6 +12,37 @@ class CvsController < ApplicationController
     end
 
   end
+  def get
+    @cv = Cv.where(id: params[:id]).first
+    respond_to do |format|
+      format.json {
+        if @cv.nil?
+          render "public/422", :status => 422
+        else
+          render :json => @cv
+        end
+      }
+    end
+  end
+  def edit
+
+  end
+def id(id)
+  @cv=Cv.find(id)
+  render :json => @cv
+end
+  def update
+    respond_to do |format|
+      if @cv.update(cv_params)
+        format.html { redirect_to @cv }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @cv.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   def create
 
@@ -33,5 +64,8 @@ class CvsController < ApplicationController
       format.json { render :json => new_post.as_json }
     end
 
+  end
+  def cv_params
+    params.require(:cv).permit(:naslov, :dodatno)
   end
 end

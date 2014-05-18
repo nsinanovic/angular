@@ -1,25 +1,24 @@
-@EditCvCtrl = ($scope, $location, cvData) ->
+@EditCvCtrl = ($scope, $location, $q, cvId) ->
 
-  $scope.prepCvData = ->
-    cv = _.findWhere(cvData.data.cvs, { id: parseInt($scope.data.cvId) })
-    $scope.data.currentCv.naslov = cv.naslov
-    $scope.data.currentCv.dodatno=cv.dodatno
+  $scope.data = cvData.data
+  cvData.loadCvs(null)
 
-  # Create promise to be resolved after posts load
-  @deferred = $q.defer()
-  @deferred.promise.then($scope.prepCvData)
-
-  # Provide deferred promise chain to the loadPosts function
-  cvData.loadCvs(@deferred)
+  $scope.formData =
+    newCvNaslov: ''
+    newCvDodatno: ''
 
   $scope.navEditCv = ->
-    $location.url('/cv/:cvId/edit')
+    $location.url('/cv/:cvId')
 
   $scope.navHome = ->
     $location.url('/')
 
   $scope.editCv = ->
-    cvData.editCv($scope.prepCvData)
+    cvData.editCv($scope.cvId)
 
-@EditCvCtrl.$inject = ['$scope', '$location', 'cvData']
+  $scope.clearCv = ->
+    $scope.formData.newCvNaslov = ''
+    $scope.formData.newCvDodatno = ''
 
+
+@EditCvCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'cvId']

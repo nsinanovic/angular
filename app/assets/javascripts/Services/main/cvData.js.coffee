@@ -50,17 +50,17 @@ angular.module('Blog').factory('cvData', ['$http', ($http) ->
 
   return cvData
 
-  cvData.ediCv = (cv) ->
+  cvData.editCv = (newPost) ->
     # Client-side data validation
-    if cv.newCvNaslov == '' or cv.newCvDodatno == ''
+    if newPost.newCvNaslov == '' or newPost.newCvDodatno == ''
       alert('Neither the Title nor the Body are allowed to be left blank.')
       return false
 
     # Create data object to POST
     data =
       new_post:
-        naslov: cv.newCvNaslov
-        dodatno: cv.newCvDodatno
+        naslov: newPost.newCvNaslov
+        dodatno: newPost.newCvDodatno
 
     # Do POST request to /posts.json
     $http.post('./cvs.json', data).success( (data) ->
@@ -70,10 +70,11 @@ angular.module('Blog').factory('cvData', ['$http', ($http) ->
       console.log('Successfully updated cv.')
 
     ).error( ->
-      console.error('Failed to update new cv.')
+      console.error('Failed to update cv.')
     )
 
     return true
 
   return cvData
+
 ])
