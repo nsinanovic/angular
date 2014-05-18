@@ -20,6 +20,8 @@ Blog.config(['$routeProvider', ($routeProvider) ->
   .when('/cv/:cvId/edit', { templateUrl: '../assets/mainEditCv.html', controller: 'EditCvCtrl' } )
   .when('/user/new', { templateUrl: '../assets/mainCreateUser.html', controller: 'CreateUserCtrl' } )
   .when('/user/:userId', { templateUrl: '../assets/mainUser.html', controller: 'UserCtrl' } )
+  .when('/advartisment/new', { templateUrl: '../assets/mainCreateAdvartisment.html', controller: 'CreateAdvartismentCtrl' } )
+  .when('/advartisment/:advartismentId', { templateUrl: '../assets/mainUser.html', controller: 'AdvartismentCtrl' } )
 
   # Default
   $routeProvider.otherwise({ templateUrl: '../assets/mainIndex.html', controller: 'IndexCtrl' } )

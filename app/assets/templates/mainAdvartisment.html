@@ -1,0 +1,18 @@
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <a href="#" class="brand">My blog</a>
+        <ul class="nav pull-right">
+            <li><a ng-click="navNewAdvartisment()">New Advartisment</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 40px">
+    <h1 class="text-center">{{data.currentAdvartisment.title}}</h1>
+    <div class="row">
+        <p>{{data.currentAdvartisment.description}}</p>
+    </div>
+    <div class="row">
+        <button class="btn btn-default" ng-click="editAdvartisment()">Edit</button>
+    </div>
+</div>
