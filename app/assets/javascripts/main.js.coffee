@@ -17,7 +17,7 @@ Blog.config(['$routeProvider', ($routeProvider) ->
     .when('/post/:postId', { templateUrl: '../assets/mainPost.html', controller: 'PostCtrl' } )
   .when('/cv/new', { templateUrl: '../assets/mainCreateCv.html', controller: 'CreateCvCtrl' } )
   .when('/cv/:cvId', { templateUrl: '../assets/mainCv.html', controller: 'CvCtrl' } )
- # .when('/cv/:cvId/edit', { templateUrl: '../assets/maiv.html', controller: 'EditCvCtrl' } )
+  .when('/cv/edit/:cvId', { templateUrl: '../assets/mainEditCv.html', controller: 'EditCvCtrl' } )
   .when('/user/new', { templateUrl: '../assets/mainCreateUser.html', controller: 'CreateUserCtrl' } )
   .when('/user/:userId', { templateUrl: '../assets/mainUser.html', controller: 'UserCtrl' } )
   .when('/advartisment/new', { templateUrl: '../assets/mainCreateAdvartisment.html', controller: 'CreateAdvartismentCtrl' } )

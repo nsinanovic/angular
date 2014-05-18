@@ -2,7 +2,7 @@
     <div class="navbar-inner">
         <a ng-click="navHome()" class="brand">My blog</a>
         <ul class="nav pull-right">
-            <li><a ng-click="navEditCv()">Update cv</a></li>
+            <li><a ng-click="navNewCv()">New cv</a></li>
         </ul>
     </div>
 </div>
@@ -12,11 +12,11 @@
     <form>
         <fieldset>
             <label><strong>Title</strong></label>
-            <input class="span12" ng-model="formData.newCvNaslov" placeholder="Edit Cv" type="text" maxlength="250"> {{data.currentCv.naslov}}
-            <label><strong>Description</strong></label>
-            <textarea class="span12" style="height: 250px" ng-model="formData.newCvDodatno" placeholder="Type your personal skills here..."> {{data.currentCv.dodatno}}</textarea>
-            <button class="btn btn-primary" ng-click="editCv()">Edit</button>
-            <button class="btn btn-danger pull-right" ng-click="clearCv()">Clear cv</button>
+            <input class="span12" ng-model="formData.editNaslov" type="text" maxlength="250" value="{{ formData.editNaslov }}">
+            <label><strong>Body</strong></label>
+            <textarea class="span12" style="height: 250px" ng-model="formData.editDodatno">{{ formData.editDodatno }}</textarea>
+            <button class="btn btn-primary" ng-click="updateCv()">Update cv</button>
+            <button class="btn btn-danger" ng-click="clearCv()">Clear cv</button>
         </fieldset>
     </form>
 </div>

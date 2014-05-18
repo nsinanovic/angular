@@ -20,8 +20,8 @@ development:
   database: blog_d
   pool: 5
   username: postgres
-  password: pqvanuzvbvvv
-  port: 5432
+  password: root
+  port: 5433
 
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -51,8 +51,8 @@ test:
   database: blog_t
   pool: 5
   username: postgres
-  password: pqvanuzvbvvv
-  port: 5432
+  password: root
+  port: 5433
 
 
 production:
@@ -61,6 +61,6 @@ production:
   database: blog_p
   pool: 5
   username: postgres
-  password: pqvanuzvbvvv
-  port: 5432
+  password: root
+  port: 5433
 
