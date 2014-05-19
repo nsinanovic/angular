@@ -1,18 +1,12 @@
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <a href="#" class="brand">My blog</a>
-        <ul class="nav pull-right">
-            <li><a ng-click="navNewCv()">New Cv</a></li>
-        </ul>
-    </div>
-</div>
+<div class="col-lg-4" style="align-content: center">
+<div class="panel panel-primary">
+    <div class="panel-heading"  >{{data.currentCv.naslov}}</div>
+            <div class="container" style="margin-top: 40px;" >
+                <p>{{data.currentCv.dodatno}}</p> <br>
+                <button class="btn btn-primary" ng-click="updateCv()">Edit</button>
+                <button class="btn btn-danger" ng-click="removeCv()">Destroy</button>
 
-<div class="container" style="margin-top: 40px">
-    <h1 class="text-center">{{data.currentCv.naslov}}</h1>
-    <div class="row">
-        <p>{{data.currentCv.dodatno}}</p>
-    </div>
-    <div class="row">
-        <button class="btn btn-default" ng-click="editCv()">Edit</button>
-    </div>
+                <br></br>
+         </div>
+  </div>
 </div>
