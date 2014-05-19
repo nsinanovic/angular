@@ -11,11 +11,17 @@ angular.module('Blog').factory('cvData', ['$http', ($http) ->
         cvData.data.cvs = data
         cvData.isLoaded = true
         console.log('Successfully loaded cvs.')
-
+        if deferred
+          deferred.resolve()
       ).error( ->
         console.error('Failed to load cvs.')
-
+        if deferred
+          deferred.resolve()
       )
+    else
+      if deferred
+        deferred.resolve()
+
 
 
   cvData.createCv = (newCv) ->
