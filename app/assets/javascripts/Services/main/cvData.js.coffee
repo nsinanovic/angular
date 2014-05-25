@@ -2,7 +2,16 @@ angular.module('Blog').factory('cvData', ['$http', ($http) ->
 
   cvData =
     data:
-      cvs: [{naslov: 'Loading', dodatno: ''}]
+      cvs: [{
+        naslov: '',
+        dodatno: '',
+        obrazovanje: '',
+        strucnaSprema:'',
+        radnoIskustvo:'',
+        jezici:'',
+        vjestine:'',
+        ostaleInformacije:''
+      }]
     isLoaded: false
 
   cvData.loadCvs = (deferred) ->
@@ -23,24 +32,26 @@ angular.module('Blog').factory('cvData', ['$http', ($http) ->
         deferred.resolve()
 
 
-
   cvData.createCv = (newCv) ->
     # Client-side data validation
-    if newCv.newCvNaslov == '' or newCv.newCvDodatno == ''
-      alert('Neither the Title nor the Body are allowed to be left blank.')
-      return false
+
 
     # Create data object to POST
     data =
       new_cv:
         naslov: newCv.newCvNaslov
         dodatno: newCv.newCvDodatno
+        obrazovanje: newCv.newCvObrazovanje
+        radnoIskustvo: newCv.newCvRadno
+        strucnaSprema: newCv.newCvSprema
+        jezici: newCv.newCvJezici
+        ostaleInformacije: newCv.newCvDodatno
 
     # Do POST request to /posts.json
     $http.post('./cvs.json', data).success( (data) ->
 
       # Add new post to array of posts
-      cvData.data.cvs.push(data)
+      cvData.data.posts.push(data)
       console.log('Successfully created cv.')
 
     ).error( ->

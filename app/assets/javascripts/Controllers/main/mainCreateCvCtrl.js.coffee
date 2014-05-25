@@ -6,6 +6,11 @@
   $scope.formData =
     newCvNaslov: ''
     newCvDodatno: ''
+    newCvObrazovanje: ''
+    newCvRadno: ''
+    newCvSprema: ''
+    newCvJezici: ''
+    newCvDodatno:''
 
   $scope.navNewCv = ->
     $location.url('/cv/new')
@@ -16,9 +21,7 @@
   $scope.createCv = ->
     cvData.createCv($scope.formData)
 
-  $scope.clearCv = ->
-    $scope.formData.newCvNaslov = ''
-    $scope.formData.newCvDodatno = ''
+
 
 
 @CreateCvCtrl.$inject = ['$scope', '$location', 'cvData']

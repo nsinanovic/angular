@@ -16,8 +16,10 @@ Blog.config(['$routeProvider', ($routeProvider) ->
     .when('/post/new', { templateUrl: '../assets/mainCreatePost.html', controller: 'CreatePostCtrl' } )
     .when('/post/:postId', { templateUrl: '../assets/mainPost.html', controller: 'PostCtrl' } )
   .when('/cv/new', { templateUrl: '../assets/mainCreateCv.html', controller: 'CreateCvCtrl' } )
+  .when('/kategorija/new', { templateUrl: '../assets/mainCreateKatgeorija.html', controller: 'CreateKategorijaCtrl' } )
   .when('/cv/:cvId', { templateUrl: '../assets/mainCv.html', controller: 'CvCtrl' } )
- # .when('/cv/edit/:cvId', { templateUrl: '../assets/mainEditCv.html', controller: 'EditCvCtrl' } )
+  .when('/kategorija/:kategorijaId', { templateUrl: '../assets/mainKategorija.html', controller: 'KategorijaCtrl' } )
+
   .when('/user/new', { templateUrl: '../assets/mainCreateUser.html', controller: 'CreateUserCtrl' } )
   .when('/user/:userId', { templateUrl: '../assets/mainUser.html', controller: 'UserCtrl' } )
   .when('/advartisment/new', { templateUrl: '../assets/mainCreateAdvartisment.html', controller: 'CreateAdvartismentCtrl' } )

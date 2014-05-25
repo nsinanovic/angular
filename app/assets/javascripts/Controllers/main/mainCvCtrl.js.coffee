@@ -3,8 +3,14 @@
   $scope.data =
     cvData: cvData.data
     currentCv:
-      naslov: 'Loading...'
+      naslov: ''
       dodatno: ''
+      obrazovanje: ''
+      strucnaSprema:''
+      radnoIskustvo:''
+      jezici:''
+      vjestine:''
+      ostaleInformacije:''
 
   $scope.data.cvId = $routeParams.cvId
 
@@ -20,6 +26,12 @@
     cv = _.findWhere(cvData.data.cvs, { id: parseInt($scope.data.cvId) })
     $scope.data.currentCv.naslov = cv.naslov
     $scope.data.currentCv.dodatno = cv.dodatno
+    $scope.data.currentCv.obrazovanje = cv.obrazovanje
+    $scope.data.currentCv.strucnaSprema = cv.strucnaSprema
+    $scope.data.currentCv.radnoIskustvo = cv.radnoIskustvo
+    $scope.data.currentCv.jezici = cv.jezici
+    $scope.data.currentCv.vjestine = cv.vjestine
+    $scope.data.currentCv.ostaleInformacije = cv.ostaleInformacije
 
   # Create promise to be resolved after posts load
   @deferred = $q.defer()

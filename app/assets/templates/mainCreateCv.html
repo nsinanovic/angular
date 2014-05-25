@@ -1,15 +1,25 @@
 <div class="row"  >
-    <div class="col-lg-4" style="align-content: center">
+    <div class="col-lg-6" style="align-content: center">
         <div class="panel panel-primary">
             <div class="panel-heading"  >Create new cv </div>
 
 <div class="container" style="margin-top: 40px;" >
-  <form >
+  <form  style="align-content: center">
     <fieldset>
-      <label><strong>Title</strong></label> <br>
-      <input class="span12" ng-model="formData.newCvNaslov" placeholder="New Cv" type="text" maxlength="250"> <br>
-      <label><strong>Description</strong></label> <br>
-      <textarea class="span12" style="height: 250px" ng-model="formData.newCvDodatno" placeholder="Type your personal skills here..."></textarea> <br>
+        <label><strong >Radno iskustvo</strong></label> <br>
+
+      <input class="span12" style="height: 250px; width:500px" ng-model="formData.newCvRadno" placeholder="Ovdje napisite informacije o rdnom iskustvu. Format je opcionalan." type="text" maxlength="250"> <br>
+      <label><strong>Stručna sprema</strong></label> <br>
+        <textarea class="span12" style="height: 250px; width:500px" ng-model="formData.newCvSprema" placeholder="Informacije o Vašem obrazovanju"></textarea> <br>
+
+        <label><strong>Obrazovanje</strong></label> <br>
+        <textarea class="span12" style="height: 250px; width:500px" ng-model="formData.newCvObrazovanje" placeholder="Informacije o Vašem obrazovanju"></textarea> <br>
+        <label><strong>Jezici</strong></label> <br>
+        <textarea class="span12" style="height: 250px;  width:500px" ng-model="formData.newCvJezici" placeholder="Napisite jezike kojim govorite kao i stepen poznavanja jezika"></textarea> <br>
+        <label><strong>Vještine</strong></label> <br>
+        <textarea class="span12" style="height: 250px; width:500px" ng-model="formData.newCvVjestine" placeholder="Napisite vjestine koje posjedujete"></textarea> <br>
+        <label><strong>Dodatne informacije</strong></label> <br>
+        <textarea class="span12" style="height: 250px; width:500px" ng-model="formData.newCvDodatno" placeholder="Ovdje napisite sve dodatne inforamcije koje bi mogle zanimati poslodavca"></textarea> <br>
       <button class="btn btn-primary" ng-click="createCv()">Create</button>
       <button class="btn btn-danger" ng-click="clearCv()">Clear cv</button>
     </fieldset>

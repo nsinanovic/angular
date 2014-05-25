@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  resources :kategorijas
+
   resources :advartisments
 
   resources :users
