@@ -5,6 +5,8 @@
     currentAdvartisment:
       title: 'Loading...'
       description: ''
+      location: ''
+      category: ''
 
   $scope.data.advartismentId = $routeParams.advartismentId
 
@@ -20,6 +22,8 @@
     advartisment = _.findWhere(advartismentData.data.advartisments, { id: parseInt($scope.data.advartismentId) })
     $scope.data.currentAdvartisment.title = advartisment.title
     $scope.data.currentAdvartisment.description = advartisment.description
+    $scope.data.currentAdvartisment.location = advartisment.location
+    $scope.data.currentAdvartisment.category = advartisment.category
 
   # Create promise to be resolved after posts load
   @deferred = $q.defer()

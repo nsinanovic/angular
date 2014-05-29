@@ -9,6 +9,13 @@
             <input class="span12" ng-model="formData.newAdvartismentTitle" placeholder="New Advartisment" type="text" maxlength="250"><br>
             <label><strong>Body</strong></label><br>
             <textarea class="span12" style="height: 250px" ng-model="formData.newAdvartismentDescription" placeholder="Type your advartisment here..."></textarea><br>
+            <label><strong>Location</strong></label><br>
+            <input class="span12" ng-model="formData.newAdvartismentLocation" placeholder="New Advartisment" type="text"><br>
+           <label><strong>Category</strong></label><br>
+           <select ng-model="formData.newAdvartismentCategory" ng-options="color.name for color in colors"></select><br>
+            <label><strong>Location</strong></label><br>
+            <input class="span12" ng-model="formData.newAdvartismentExpire" placeholder="New Advartisment" type="date"><br>
+            <br>
             <button class="btn btn-primary" ng-click="createAdvartisment()">Create</button>
             <button class="btn btn-danger" ng-click="clearAdvartisment()">Clear </button>
         </fieldset>

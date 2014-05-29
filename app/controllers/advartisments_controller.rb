@@ -20,6 +20,9 @@ class AdvartismentsController < ApplicationController
       new_advartisment = Advartisment.new
       new_advartisment.title = params[:new_advartisment][:title][0...250] # Get only first 250 characters
       new_advartisment.description = params[:new_advartisment][:description]
+      new_advartisment.location = params[:new_advartisment][:location]
+      new_advartisment.category = params[:new_advartisment][:category]
+      new_advartisment.expire = params[:new_advartisment][:expire]
 
       # Confirm post is valid and save or return HTTP error
       if new_advartisment.valid?

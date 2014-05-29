@@ -27,39 +27,6 @@ ActiveRecord::Schema.define(version: 20140525231637) do
     t.datetime "updated_at"
   end
 
-  create_table "biografijas", force: true do |t|
-    t.string   "pozicija"
-    t.string   "poslodavac"
-    t.string   "lokacija"
-    t.string   "pocetakRada"
-    t.string   "drzava"
-    t.string   "zavrsetakRada"
-    t.string   "preporuke"
-    t.string   "opisPosla"
-    t.string   "jezik"
-    t.string   "strucnaSprema"
-    t.string   "stepen"
-    t.string   "obrazovnaUstanova"
-    t.string   "titula"
-    t.string   "smjer"
-    t.string   "opis"
-    t.string   "pocetak"
-    t.string   "vjestina"
-    t.string   "zavrsetak"
-    t.string   "komentar"
-    t.string   "stepenObrazovanja"
-    t.string   "kompetencije"
-    t.string   "ostalo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "categories", force: true do |t|
-    t.string   "naziv"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "cvs", force: true do |t|
     t.string   "naslov"
     t.string   "dodatno"
@@ -73,26 +40,8 @@ ActiveRecord::Schema.define(version: 20140525231637) do
     t.string   "ostaleInformacije"
   end
 
-  create_table "jeziks", force: true do |t|
-    t.string   "jezik"
-    t.string   "stepen"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "kategorijas", force: true do |t|
     t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "obrazovanjes", force: true do |t|
-    t.string   "obrazovnaUstanova"
-    t.string   "smjer"
-    t.string   "titula"
-    t.string   "opis"
-    t.string   "pocetak"
-    t.string   "zavrsetak"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -106,19 +55,6 @@ ActiveRecord::Schema.define(version: 20140525231637) do
     t.datetime "updated_at"
   end
 
-  create_table "radno_iskustvos", force: true do |t|
-    t.string   "pozicija"
-    t.string   "poslodavac"
-    t.string   "lokacija"
-    t.string   "drzava"
-    t.string   "pocetakRada"
-    t.string   "zavrsetakRada"
-    t.string   "opisPosla"
-    t.string   "preporuke"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "password"
@@ -127,14 +63,6 @@ ActiveRecord::Schema.define(version: 20140525231637) do
     t.string   "address"
     t.string   "phone"
     t.string   "username"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "vjestines", force: true do |t|
-    t.string   "vjestina"
-    t.string   "stepenPoznavanja"
-    t.string   "komentar"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

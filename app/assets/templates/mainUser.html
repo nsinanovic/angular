@@ -1,18 +1,13 @@
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <a href="#" class="brand">My blog</a>
-        <ul class="nav pull-right">
-            <li><a ng-click="navNewUser()">New User</a></li>
-        </ul>
-    </div>
-</div>
-
+<div class="row"  >
+    <div class="col-lg-4" style="align-content: center">
+        <div class="panel panel-primary">
+            <div class="panel-heading"  >User info </div>
 <div class="container" style="margin-top: 40px">
-    <h1 class="text-center">{{data.currentUser.email}}</h1>
-    <div class="row">
-        <p>{{data.currentUser.password}}</p>
-    </div>
-    <div class="row">
-        <button class="btn btn-default" ng-click="editUser()">Edit</button>
+    <p><b>Email :</b> {{data.currentUser.email}}</p>
+    <p><b>Password : </b> {{data.currentUser.password}}</p>
+    <button class="btn btn-default" ng-click="editUser()">Edit</button>
+</div>
+            <br>
+        </div>
     </div>
 </div>
