@@ -14,6 +14,7 @@ class AdvartismentsController < ApplicationController
 
     end
 
+
     def create
 
       # Create and save new post from data received from the client
