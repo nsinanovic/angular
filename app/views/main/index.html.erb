@@ -108,10 +108,10 @@
       </ul>
       <ul class="nav navbar-nav navbar-right navbar-user">
         <li class="dropdown messages-dropdown">
-          <a href="#">  Register </a>
+          <%= link_to 'Registration',new_user_path %>
         </li>
         <li class="dropdown user-dropdown">
-          <a href="#">  Login </a>
+          <%= link_to  'Login', log_in_path %>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -129,7 +129,16 @@
   </div>
 </div><!-- /.row -->
 
-      <div ng-view></div>
+      <div ng-view>
+
+
+
+      </div>
+
+  <% if current_user %> neko je logovan
+      <% if current_user.email=="admin@poso.ba"%> admin je logovan <%end%>
+  <% else %> nije niko logovan
+  <% end %>
 
 
 </div><!-- /#page-wrapper -->

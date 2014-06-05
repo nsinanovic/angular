@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
   respond_to :json
 
+
+  def new
+    @user = User.new
+  end
+
+
+
+
   def index
 
     # Gather all post data
