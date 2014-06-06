@@ -6,7 +6,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5433/blog_d</jdbc-url>
       <user-name>postgres</user-name>
-      <user-password>dfd8dfc5dfc5dfde</user-password>
+      <user-password>dfdadfdbdfdcdfcbdfc4dfdfdfd0dfdcdfc8dfdcdfdcdfdc</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails angular: test" uuid="03b99090-683c-4207-b165-88f7a01d3e77">
@@ -14,7 +14,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5433/blog_t</jdbc-url>
       <user-name>postgres</user-name>
-      <user-password>dfd8dfc5dfc5dfde</user-password>
+      <user-password>dfdadfdbdfdcdfcbdfc4dfdfdfd0dfdcdfc8dfdcdfdcdfdc</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails angular: production" uuid="68c00054-74e2-4eb8-b03e-4d06244adaa4">
@@ -22,7 +22,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5433/blog_p</jdbc-url>
       <user-name>postgres</user-name>
-      <user-password>dfd8dfc5dfc5dfde</user-password>
+      <user-password>dfdadfdbdfdcdfcbdfc4dfdfdfd0dfdcdfc8dfdcdfdcdfdc</user-password>
       <libraries />
     </data-source>
   </component>

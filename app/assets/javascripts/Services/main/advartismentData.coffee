@@ -9,6 +9,7 @@ angular.module('Blog').factory('advartismentData', ['$http', ($http) ->
     if !advartismentData.isLoaded
       $http.get('./advartisments.json').success( (data) ->
         advartismentData.data.advartisments = data
+
         advartismentData.isLoaded = true
         console.log('Successfully loaded advartisments.')
         if deferred
