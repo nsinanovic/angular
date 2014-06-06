@@ -7,7 +7,7 @@
 #= require_tree ./Services/main
 
 # Creates new Angular module called 'Blog'
-Blog = angular.module('Blog', [])
+Blog =angular.module( "Blog", [])
 
 # Sets up routing
 Blog.config(['$routeProvider', ($routeProvider) ->
