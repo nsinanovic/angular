@@ -1,133 +1,47 @@
-<html>
-<head></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Berza poslova</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Add custom CSS here -->
+  <link href="../assets/css/sb-admin.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+  <!-- Page Specific CSS -->
+  <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+</head>
+
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">Berza poslova</a>
+
+<div id="wrapper">
+  <div class="col-lg-3"></div>
+  <%= form_tag sessions_path do %>
+  <div class="col-lg-3">
+    <div class="well">
+      <%= label_tag 'Unesite pristupne podatke' %> <br><br>
+      <form role="form">
+        <div class="form-group input-group">
+          <%= label_tag 'Email' %><br>
+            <%= text_field_tag :email, params[:email] %>
+        </div>
+        <div class="form-group input-group">
+          <%= label_tag 'Password' %> <br>
+          <%= password_field_tag :password %>
+        </div>
+        <button class="btn "style="align-content: center; text-align: center;" ><%= t "nav.login" %> <a style="visibility: hidden" <%= submit_tag (t "nav.login") %>  /a></button>
+      </form>
+    </div>
+
   </div>
+<% end %>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav side-nav">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Jezik <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="?locale=bs#" data-no-turbolink="true">Bosanski</a></li>
-          <li><a href="?locale=en#" data-no-turbolink="true">Engelski</a></li>
-          <li><a href="#">Hrvatski</a></li>
-        </ul>
-      </li>
-
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Lokacije <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Sve lokacije </a></li>
-          <li><a href="#">Sarajevo </a></li>
-          <li><a href="#">Banja Luka</a></li>
-          <li><a href="#">Mostar</a></li>
-          <li><a href="#">Zenica</a></li>
-          <li><a href="#">Tuzla</a></li>
-          <li><a href="#">Bihać</a></li>
-          <li><a href="#">Travnik</a></li>
-          <li><a href="#">Zavidovići</a></li>
-          <li><a href="#">Brčko</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Kategorije <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Administrativne usluge </a></li>
-          <li><a href="#">Bankarstvo </a></li>
-          <li><a href="#">Biotehnologija i farmacija</a></li>
-          <li><a href="#">Drvna industrija</a></li>
-          <li><a href="#">Državna služba i uprava</a></li>
-          <li><a href="#">Ekonomija i finansije </a></li>
-          <li><a href="#">Elektrotehnika i informatika </a></li>
-          <li><a href="#">Energetika i rudarstvo</a></li>
-          <li><a href="#">Frizeri i kozmetičari </a></li>
-          <li><a href="#">Geologija</a></li>
-          <li><a href="#">Građevinarstvo i arhitektura </a></li>
-          <li><a href="#">Komercijala i prodaja</a></li>
-          <li><a href="#">Konsalting</a></li>
-          <li><a href="#">Marketing i PR</a></li>
-          <li><a href="#">Mašinstvo i metalurgija </a></li>
-          <li><a href="#">Mediji </a>
-          <li><a href="#">Menadžment i upravljanje </a></li>
-          <li><a href="#">Obrazovanje, kultura i sport </a></li>
-          <li><a href="#">Osiguranje </a></li>
-          <li><a href="#">Ostalo</a></li>
-          <li><a href="#">Policija i zaštitarske usluge</a></li>
-          <li><a href="#">Političke nauke </a></li>
-          <li><a href="#">Poljoprivreda i šumarstvo </a></li>
-          <li><a href="#">Pravo i društvene nauke</a></li>
-          <li><a href="#">Prevodilačke usluge </a></li>
-          <li><a href="#">Proizvodnja</a></li>
-          <li><a href="#">Računovodstvo i revizija</a></li>
-          <li><a href="#">Socijalne usluge</a></li>
-          <li><a href="#">Stipendije </a></li>
-          <li><a href="#">Teleprodaja i telemarketing</a></li>
-          <li><a href="#">Transport i skladištenje</a></li>
-          <li><a href="#">Trgovina </a></li>
-          <li><a href="#">Ugostiteljstvo i turizam </a></li>
-          <li><a href="#">Umjetnost i dizajn</a></li>
-          <li><a href="#">Zanatske usluge </a></li>
-          <li><a href="#">Zdravstvo i medicina  </a></li>
-        </ul>
-      </li>
-    </ul>
-
-    <ul class="nav navbar-nav navbar-right navbar-user">
-      <li class="dropdown messages-dropdown">
-        <%= link_to 'Registration',new_user_path %>
-      </li>
-      <li class="dropdown user-dropdown">
-        <%= link_to  'Login', log_in_path %>
-      </li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
-
-<br>
-
-<%= form_tag sessions_path do %>
-
-      <!--login modal-->
-<div align="center">
-          <div class="modal-content" aligne="center" style="  border: 2px solid black;width:400px;margin-top:40px">
-            <div class="modal-header" style="align-content: center; text-align: center;">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h1 class="text-center">Login</h1>
-            </div>
-            <div class="modal-body" style="align-content: center; text-align: center;">
-              <form class="form col-md-12 center-block" style="align-content: center; text-align: center; align-items: center">
-                <div class="form-group" style="align-content: center; text-align: center;">
-                  <%= label_tag (t "user.email") %>  <%= text_field_tag :email, params[:email] %>
-                </div>
-                <div class="form-group" style="align-content: center; text-align: center;">
-                  <%= label_tag (t "user.password") %>  <%= password_field_tag :password %>
-                </div>
-                <div class="form-group"style="align-content: center; text-align: center;">
-                  <button class="btn "style="align-content: center; text-align: center;" ><%= t "nav.login" %> <a style="visibility: hidden" <%= submit_tag (t "nav.login") %>  /a></button>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer" style="border-top: 0px;align-content: center; text-align: center;" >
-              <div class="col-md-12">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-              </div>
-            </div>
-          </div>
-      </div>
-
-
-  <% end %>
+</div>
 </body>
 </html>
-
