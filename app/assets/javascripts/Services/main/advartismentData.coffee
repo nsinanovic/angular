@@ -2,7 +2,7 @@ angular.module('Blog').factory('advartismentData', ['$http', ($http) ->
 
   advartismentData =
     data:
-      advartisments: [{title: 'Loading', description: '' ,categorry: '', location:''}]
+      advartisments: [{title: 'Loading', description: '' ,category: '', location:''}]
     isLoaded: false
 
   advartismentData.loadAdvartisments = (deferred) ->
@@ -36,7 +36,7 @@ angular.module('Blog').factory('advartismentData', ['$http', ($http) ->
         description: newAdvartisment.newAdvartismentDescription
         location: newAdvartisment.newAdvartismentLocation
         category: newAdvartisment.newAdvartismentCategory.name
-        expire: newAdvartisment.newAdvartismentE
+
 
     # Do POST request to /posts.json
     $http.post('./advartisments.json', data).success( (data) ->
