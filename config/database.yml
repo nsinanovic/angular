@@ -21,6 +21,7 @@ development:
   pool: 5
   username: postgres
   password: root
+  port: 5433
 
 
 
@@ -52,6 +53,7 @@ test:
   pool: 5
   username: postgres
   password: root
+  port: 5433
 
 
 
@@ -62,4 +64,5 @@ production:
   pool: 5
   username: postgres
   password: root
+  port: 5433
 
