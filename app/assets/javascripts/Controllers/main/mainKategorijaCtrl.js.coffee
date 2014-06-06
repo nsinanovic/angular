@@ -26,7 +26,7 @@
   @deferred.promise.then($scope.prepKategorijasData)
 
   # Provide deferred promise chain to the loadPosts function
-  kategorijaData.loadKategorije(@deferred)
+  kategorijaData.loadKategorijas(@deferred)
 
 
 @KategorijaCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'kategorijaData']

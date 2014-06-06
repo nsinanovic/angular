@@ -1,12 +1,14 @@
 @CreateKategorijaCtrl = ($scope, $location, kategorijaData) ->
 
   $scope.data = kategorijaData.data
-  kategorijaData.loadKategorije(null)
+  kategorijaData.loadKategorijas(null)
 
   $scope.formData =
     newKategorijaTitle: ''
 
 
+  $scope.navNewKategorija = ->
+    $location.url('/kategorija/new')
 
   $scope.navHome = ->
     $location.url('/')

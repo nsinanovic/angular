@@ -2,16 +2,14 @@ angular.module('Blog').factory('kategorijaData', ['$http', ($http) ->
 
   kategorijaData =
     data:
-      kategorijas: [{
-        title: ''
-
-      }]
+      kategorijas: [{title: 'Loading'}]
     isLoaded: false
 
-  kategorijaData.loadKategorije = (deferred) ->
+  kategorijaData.loadKategorijas = (deferred) ->
     if !kategorijaData.isLoaded
       $http.get('./kategorijas.json').success( (data) ->
         kategorijaData.data.kategorijas = data
+
         kategorijaData.isLoaded = true
         console.log('Successfully loaded categories.')
         if deferred
@@ -28,7 +26,9 @@ angular.module('Blog').factory('kategorijaData', ['$http', ($http) ->
 
   kategorijaData.createKategorija = (newKategorija) ->
     # Client-side data validation
-
+    if newKategorija.newKategorijaTitle == ''
+      alert('Neither the email nor the password are allowed to be left blank.')
+      return false
 
     # Create data object to POST
     data =

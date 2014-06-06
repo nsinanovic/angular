@@ -55,8 +55,6 @@ test:
   password: root
   port: 5433
 
-
-
 production:
   adapter: postgresql
   encoding: unicode
