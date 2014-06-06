@@ -35,7 +35,7 @@ Blog.config(['$routeProvider', ($routeProvider) ->
   .when('/advartismentkategorija/frizeri',{ templateUrl: '../assets/mainFrizeri.html', controller: 'IndexCtrl' })
   .when('/advartismentkategorija/geologija',{ templateUrl: '../assets/mainGeologija.html', controller: 'IndexCtrl' })
   .when('/advartismentkategorija/gradjevinarstvo',{ templateUrl: '../assets/mainGradjevinarstvo.html', controller: 'IndexCtrl' })
-  .when('/advartismentkategorija/komercijla',{ templateUrl: '../assets/mainKomercijala.html', controller: 'IndexCtrl' })
+  .when('/advartismentkategorija/komercijala',{ templateUrl: '../assets/mainKomercijala.html', controller: 'IndexCtrl' })
   .when('/advartismentkategorija/konsalting',{ templateUrl: '../assets/mainKonsalting.html', controller: 'IndexCtrl' })
   .when('/advartismentkategorija/marketing',{ templateUrl: '../assets/mainMarketing.html', controller: 'IndexCtrl' })
   .when('/advartismentkategorija/masinstvo',{ templateUrl: '../assets/mainMasinstvo.html', controller: 'IndexCtrl' })

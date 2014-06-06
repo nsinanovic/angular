@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="Blog">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -121,6 +121,9 @@
           </ul>
         </li>
         <% else%>
+            <li class="dropdown user-dropdown">
+            <a href="#/user/new">Sign up</a>
+            </li>
             <li class="dropdown user-dropdown">
               <%= link_to 'Login', log_in_path %>
             </li>
