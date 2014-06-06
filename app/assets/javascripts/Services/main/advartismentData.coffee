@@ -2,7 +2,7 @@ angular.module('Blog').factory('advartismentData', ['$http', ($http) ->
 
   advartismentData =
     data:
-      advartisments: [{title: 'Loading', description: '' ,category: '', location:''}]
+      advartisments: [{title: 'Loading', description: ''}]
     isLoaded: false
 
   advartismentData.loadAdvartisments = (deferred) ->
@@ -25,8 +25,8 @@ angular.module('Blog').factory('advartismentData', ['$http', ($http) ->
 
   advartismentData.createAdvartisment = (newAdvartisment) ->
     # Client-side data validation
-    if newAdvartisment.newAdvartismentTitle == '' or newAdvartisment.newAdvartismentDescription == '' or newAdvartisment.newAdvartismentLocation == '' or newAdvartisment.newAdvartismentCategory == ''
-      alert('Neither the Title nor the Body are allowed to be left blank.')
+    if newAdvartisment.newAdvartismentTitle == '' or newAdvartisment.newAdvartismentDescription == ''
+      alert('Neither the email nor the password are allowed to be left blank.')
       return false
 
     # Create data object to POST
@@ -34,9 +34,6 @@ angular.module('Blog').factory('advartismentData', ['$http', ($http) ->
       new_advartisment:
         title: newAdvartisment.newAdvartismentTitle
         description: newAdvartisment.newAdvartismentDescription
-        location: newAdvartisment.newAdvartismentLocation
-        category: newAdvartisment.newAdvartismentCategory.name
-
 
     # Do POST request to /posts.json
     $http.post('./advartisments.json', data).success( (data) ->
