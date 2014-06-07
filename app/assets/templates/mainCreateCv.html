@@ -6,43 +6,52 @@
 <div class="container" style="margin-top: 40px;" >
   <form  style="align-content: center">
     <fieldset>
-        <div class="row" style="align-content: center">
-            <div class="col-lg-4" style="align-content: center">
-        <label><strong >Radno iskustvo</strong></label> <br>
-      <textarea class="span12" style="height: 100px; width:250px" ng-model="formData.newCvRadno" placeholder=""></textarea> <br>
 
-            </div>
-            <div class="col-lg-4" style="align-content: center">
-      <label><strong>Stručna sprema</strong></label> <br>
-        <textarea class="span12" style="height: 100px; width:250px" ng-model="formData.newCvSprema" placeholder=""></textarea> <br>
-
-                </div>
-            </div>
-        <hr>
-        <div class="row" style="align-content: center">
-            <div class="col-lg-4" style="align-content: center">
-        <label><strong>Obrazovanje</strong></label> <br>
-        <textarea class="span12" style="height: 100px; width:250px" ng-model="formData.newCvObrazovanje" placeholder=""></textarea> <br>
-            </div>
-            <div class="col-lg-4" style="align-content: center">
-        <label><strong>Jezici</strong></label> <br>
-        <textarea class="span12" style="height: 100px;  width:250px" ng-model="formData.newCvJezici" placeholder=""></textarea> <br>
+        <div class="row" >
+            <div class="col-lg-8">
+                <label><strong>Obrazovanje</strong></label> <br>
+                <textarea class="span12" style="height: 50px; width:750px"  ng-model="formData.newCvObrazovanje" placeholder=""></textarea>    <hr>
             </div>
         </div>
-        <hr>
-        <div class="row" style="align-content: center">
-            <div class="col-lg-4" style="align-content: center">
-        <label><strong>Vještine</strong></label> <br>
-        <textarea class="span12" style="height: 100px; width:250px" ng-model="formData.newCvVjestine" placeholder=""></textarea> <br>
-            </div>
-            <div class="col-lg-4" style="align-content: center">
-        <label><strong>Dodatne informacije</strong></label> <br>
-        <textarea class="span12" style="height: 100px; width:250px" ng-model="formData.newCvDodatno" placeholder=""></textarea> <br>
+        <div class="row" >
+            <div class="col-lg-8">
+                <label><strong>Stručna sprema</strong></label> <br>
+                <textarea class="span12"  style="height: 50px; width:750px" ng-model="formData.newCvSprema" placeholder=""></textarea>    <hr>
             </div>
         </div>
-        <hr>
-        <button class="btn btn-primary" ng-click="createCv()">Kreiraj</button>
-      <button class="btn btn-default" ng-click="clearCv()">Očisti polja</button>
+
+        <div class="row" >
+            <div class="col-lg-8">
+                    <label><strong >Radno iskustvo</strong></label> <br>
+                  <textarea class="span12" style="height: 50px; width:750px" ng-model="formData.newCvRadno" placeholder=""></textarea> <hr>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-lg-8">
+                <label><strong >Jezici</strong></label> <br>
+                <textarea class="span12" style="height: 50px; width:750px" ng-model="formData.newCvJezici" placeholder=""></textarea> <hr>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-lg-8">
+                <label><strong >Vještine</strong></label> <br>
+                <textarea class="span12" style="height: 50px; width:750px" ng-model="formData.newCvVjestine" placeholder=""></textarea> <hr>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-lg-8">
+                <label><strong >Dodatne informacije</strong></label> <br>
+                <textarea class="span12" style="height: 50px; width:750px" ng-model="formData.newCvDodatno" placeholder=""></textarea> <hr>
+            </div>
+        </div>
+
+
+        <button class="btn btn-primary" ng-click="createCv()">Kreiraj cv</button>
+        <button class="btn btn-default" ng-click="clearCv()">Očisti polja</button>
+
     </fieldset>
   </form>
 </div>
