@@ -2,7 +2,7 @@ angular.module('Blog').factory('userData', ['$http', ($http) ->
 
   userData =
     data:
-      users: [{email: 'Loading', password: ''}]
+      users: [{email: 'Loading', password: '', username:''}]
     isLoaded: false
 
   userData.loadUsers = (deferred) ->
@@ -23,10 +23,15 @@ angular.module('Blog').factory('userData', ['$http', ($http) ->
         deferred.resolve()
 
 
+  d=new Date()
+  m= d.getMonth()+1
+  y= d.getFullYear()
+
+
   userData.createUser = (newUser) ->
     # Client-side data validation
     if newUser.newUserEmail == '' or newUser.newUserPassword == ''
-      alert('Neither the email nor the password are allowed to be left blank.')
+      alert('Neither the Title nor the Body are allowed to be left blank.')
       return false
 
     # Create data object to POST
@@ -34,6 +39,7 @@ angular.module('Blog').factory('userData', ['$http', ($http) ->
       new_user:
         email: newUser.newUserEmail
         password: newUser.newUserPassword
+        username: d.getDate()+'/'+m+'/'+y
 
     # Do POST request to /posts.json
     $http.post('./users.json', data).success( (data) ->

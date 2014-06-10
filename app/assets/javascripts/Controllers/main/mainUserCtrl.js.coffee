@@ -5,6 +5,11 @@
     currentUser:
       email: 'Loading...'
       password: ''
+      name: ''
+      lastname: ''
+      phone: ''
+      address: ''
+      username: ''
 
   $scope.data.userId = $routeParams.userId
 
@@ -20,6 +25,11 @@
     user = _.findWhere(userData.data.users, { id: parseInt($scope.data.userId) })
     $scope.data.currentUser.email = user.email
     $scope.data.currentUser.password = user.password
+    $scope.data.currentUser.lastname = user.lastname
+    $scope.data.currentUser.phone = user.phone
+    $scope.data.currentUser.address = user.address
+    $scope.data.currentUser.username = user.username
+    $scope.data.currentUser.name = user.name
 
   # Create promise to be resolved after posts load
   @deferred = $q.defer()

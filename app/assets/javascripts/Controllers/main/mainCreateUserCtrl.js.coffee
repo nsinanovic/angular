@@ -6,6 +6,11 @@
   $scope.formData =
     newUserEmail: ''
     newUserPassword: ''
+    newUserName:''
+    newUserLastname:''
+    newUserAddress:''
+    newUserPhone:''
+    newUserUsername: ''
 
   $scope.navNewUser = ->
     $location.url('/user/new')
@@ -19,6 +24,11 @@
   $scope.clearUser = ->
     $scope.formData.newUserEmail = ''
     $scope.formData.newUserPassword = ''
+    $scope.formData.newUserAddress = ''
+    $scope.formData.newUserPhone= ''
+    $scope.formData.newUserName = ''
+    $scope.formData.newUserLastname = ''
+    $scope.formData.newUserUsername = ''
 
 
 @CreateUserCtrl.$inject = ['$scope', '$location', 'userData']

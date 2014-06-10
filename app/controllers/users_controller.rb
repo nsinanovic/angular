@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     new_user = User.new
     new_user.email = params[:new_user][:email][0...250] # Get only first 250 characters
     new_user.password = params[:new_user][:password]
+    new_user.username = params[:new_user][:username]
 
     # Confirm post is valid and save or return HTTP error
     if new_user.valid?
