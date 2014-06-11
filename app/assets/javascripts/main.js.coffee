@@ -9,12 +9,13 @@
 # Creates new Angular module called 'Blog'
 Blog =angular.module( "Blog", [])
 
+
 # Sets up routing
 Blog.config(['$routeProvider', ($routeProvider) ->
   # Route for '/post/'
   $routeProvider
-    .when('/post/new', { templateUrl: '../assets/mainCreatePost.html', controller: 'CreatePostCtrl' } )
-    .when('/post/:postId', { templateUrl: '../assets/mainPost.html', controller: 'PostCtrl' } )
+  .when('/post/new', { templateUrl: '../assets/mainCreatePost.html', controller: 'CreatePostCtrl' } )
+  .when('/post/:postId', { templateUrl: '../assets/mainPost.html', controller: 'PostCtrl' } )
   .when('/cv/new', { templateUrl: '../assets/mainCreateCv.html', controller: 'CreateCvCtrl' } )
   .when('/kategorija/new', { templateUrl: '../assets/mainCreateKatgeorija.html', controller: 'CreateKategorijaCtrl' } )
   .when('/cv/:cvId', { templateUrl: '../assets/mainCv.html', controller: 'CvCtrl' } )

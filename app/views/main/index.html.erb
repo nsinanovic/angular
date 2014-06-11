@@ -66,6 +66,15 @@
             <li><a href="#"></i> <%= link_to (t "nav.logout"), log_out_path %></a></li>
           </ul>
         </li>
+        <%elsif current_employer %>
+            <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <%= current_employer.email %> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to (t "nav.profile"),current_employer%></li>
+                <li class="divider"></li>
+                <li><a href="#"></i> <%= link_to (t "nav.logout"), log_out_path %></a></li>
+              </ul>
+            </li>
         <% else%>
             <li class="dropdown user-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registracija <b class="caret"></b></a>
@@ -96,6 +105,7 @@
 
   <% if current_user %> neko je logovan
       <% if current_user.email=="admin@poso.ba"%> admin je logovan <%end%>
+  <%elsif current_employer %> employer je logovan
   <% else %> nije niko logovan
   <% end %>
 

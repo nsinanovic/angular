@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_filter :provjera , :except => [:create,:new]
+  #before_filter :provjera , :except => [:create,:new]
   before_action :set_session, only: [:show, :edit, :update, :destroy]
 
   # GET /sessions
@@ -24,13 +24,13 @@ class SessionsController < ApplicationController
   end
   def create
     user = User.authenticate(params[:email], params[:password])
-    #employer = Employer.authenticate(params[:email], params[:password])
+    employer = Employer.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
       redirect_to root_url, :notice => "Logged in!"
-   # elsif employer
-     # session[:employer_id] = employer.id
-    #  redirect_to root_url, :notice => "Logged in!"
+    elsif employer
+      session[:employer_id] = employer.id
+      redirect_to root_url, :notice => "Logged in!"
     else
       flash.now.alert = "Invalid email or password"
       render "new"
@@ -39,7 +39,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-   # session[:employer_id] = nil
+    session[:employer_id] = nil
     redirect_to root_url, :notice => "Logged out!"
   end
 
