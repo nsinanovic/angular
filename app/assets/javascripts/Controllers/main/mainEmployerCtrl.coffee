@@ -1,5 +1,6 @@
-@EmployerCtrl = ($scope, $routeParams, $location, $q, employerData) ->
-
+@EmployerCtrl = ($scope, $routeParams, $location, $q, employerData, $translate) ->
+ $scope.changeLanguage  = (key) ->
+  $translate.use(key)
   $scope.data =
     employerData: employerData.data
     currentEmployer:
@@ -35,4 +36,4 @@
   employerData.loadEmployers(@deferred)
 
 
-@EmployerCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'employerData']
+@EmployerCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'employerData', '$translate']

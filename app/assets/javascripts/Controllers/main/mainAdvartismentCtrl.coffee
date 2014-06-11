@@ -1,5 +1,6 @@
-@AdvartismentCtrl = ($scope, $routeParams, $location, $q, advartismentData) ->
-
+@AdvartismentCtrl = ($scope, $routeParams, $location, $q, advartismentData, $translate) ->
+ $scope.changeLanguage  = (key) ->
+  $translate.use(key)
   $scope.data =
     advartismentData: advartismentData.data
     currentAdvartisment:
@@ -29,4 +30,4 @@
   advartismentData.loadAdvartisments(@deferred)
 
 
-@AdvartismentCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'advartismentData']
+@AdvartismentCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'advartismentData', '$translate']

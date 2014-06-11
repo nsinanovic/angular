@@ -1,4 +1,33 @@
 
+<div class="row" >
+
+    <div class="col-lg-8">
+
+        <h2>Berza poslova <small>beta version 1.1</small></h2>
+    </div>
+    <div class="col-lg-4">
+        <div style="text-align: right">
+            <a ng-click="changeLanguage('ba')" data-no-turbolink="true">BS </a> ||
+            <a ng-click="changeLanguage('en')" data-no-turbolink="true">EN</a>
+        </div>
+        <div class="breadcrumb">
+            <form role="form">
+                <div class="form-group input-group">
+
+                    <input type="text" class="form-control"  ng-model="searchText">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" disabled="disabled">{{'SEARCH' | translate}}</button>
+                </span>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<hr>
 
 <div class="row">
 
@@ -7,25 +36,25 @@
 
 
         <div class="page-header">
-            <h1 id="container">Ime i prezime</h1>
+            <h1 id="container"> CV</h1>
         </div>
         <div class="bs-example">
             <div class="jumbotron">
                 <h2>{{data.currentCv.naslov}}</h2>
-                <b>Radno iskustvo</b>
+                <b>{{'WORK' | translate}}</b>
                  {{data.currentCv.radnoIskustvo}} <br>
-                <b>Stručna sprema</b>
+                <b>{{'DEGREE' | translate}}</b>
                 {{data.currentCv.strucnaSprema}} <br>
-                <b>Obrazovanje</b>
+                <b>{{'EDUCATION' | translate}}</b>
                 {{data.currentCv.obrazovanje}}<br>
-                <b>Jezici </b>
+                <b>{{'LANGUAGES' | translate}} </b>
                 {{data.currentCv.jezici}} <br>
-                <b>Vještine</b>
+                <b>{{'SKILLS' | translate}}</b>
                 {{data.currentCv.vjestine}}<br>
-                <b>Dodatne informacije</b>
+                <b>{{'ADDINFORMATION' | translate}}</b>
 
                 {{data.currentCv.dodatno}}<br>
-                <p><a class="btn btn-primary btn-lg">Edituj cv</a></p>
+                <p><a class="btn btn-primary btn-lg"> {{'EDIT' | translate}}</a></p>
             </div>
         </div>
 
@@ -52,7 +81,7 @@
         </div>
         <hr>
         <div class="panel panel-default">
-            <div class="panel-heading">Kategorije za koje dobijam notifikacije</div>
+            <div class="panel-heading"> {{'NOTIFICATION' | translate}}</div>
             <div class="panel-body">
                Ekonomija
             </div>
@@ -65,15 +94,15 @@
             <ul class="list-group">
                 <li class="list-group-item">
                     <span class="badge">>></span>
-                    Kreiraj novi cv
+                    <a href="/#/cv/new">{{ 'NEWCV' | translate }} </a>
                 </li>
                 <li class="list-group-item">
                     <span class="badge">>></span>
-                    Isprintaj ovaj cv
+                    <a href="/#/cv/save">{{ 'PRINTCV' | translate }} </a>
                 </li>
                 <li class="list-group-item">
                     <span class="badge">>></span>
-                    Sačuvaj ovaj cv
+                    <a href="/#/cv/print">{{ 'SAVECV' | translate }} </a>
                 </li>
             </ul>
         </div>
@@ -81,13 +110,13 @@
         <div class="bs-example">
             <div class="list-group">
                 <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">Još jedan cv</h4>
+                    <h4 class="list-group-item-heading">CV</h4>
                     <p class="list-group-item-text"> Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
 
 
                 </a>
                 <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">Još jedan cv</h4>
+                    <h4 class="list-group-item-heading">CV</h4>
                     <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                 </a>
             </div>

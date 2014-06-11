@@ -1,5 +1,6 @@
-@CreateAdvartismentCtrl = ($scope, $location, advartismentData) ->
-
+@CreateAdvartismentCtrl = ($scope, $location, advartismentData, $translate) ->
+ $scope.changeLanguage  = (key) ->
+  $translate.use(key)
   $scope.data = advartismentData.data
   advartismentData.loadAdvartisments(null)
 
@@ -65,4 +66,4 @@
     $scope.newAdvartismentExpire = ''
 
 
-@CreateAdvartismentCtrl.$inject = ['$scope', '$location', 'advartismentData']
+@CreateAdvartismentCtrl.$inject = ['$scope', '$location', 'advartismentData', '$translate']

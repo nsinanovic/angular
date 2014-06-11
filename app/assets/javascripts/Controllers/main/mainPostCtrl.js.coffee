@@ -1,5 +1,6 @@
-@PostCtrl = ($scope, $routeParams, $location, $q, postData) ->
-
+@PostCtrl = ($scope, $routeParams, $location, $q, postData, $translate) ->
+ $scope.changeLanguage  = (key) ->
+  $translate.use(key)
   $scope.data =
     postData: postData.data
     currentPost:
@@ -29,4 +30,4 @@
   postData.loadPosts(@deferred)
 
 
-@PostCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'postData']
+@PostCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'postData', '$translate']

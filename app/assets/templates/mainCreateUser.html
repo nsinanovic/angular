@@ -1,53 +1,72 @@
-<div class="row">
+<div class="row" >
 
     <div class="col-lg-8">
 
         <h2>Berza poslova <small>beta version 1.1</small></h2>
     </div>
+    <div class="col-lg-4">
+        <div style="text-align: right">
+            <a ng-click="changeLanguage('ba')" data-no-turbolink="true">BS </a> ||
+            <a ng-click="changeLanguage('en')" data-no-turbolink="true">EN</a>
+        </div>
+        <div class="breadcrumb">
+            <form role="form">
+                <div class="form-group input-group">
 
+                    <input type="text" class="form-control"  ng-model="searchText">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" disabled="disabled">{{'SEARCH' | translate}}</button>
+                </span>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
 
 
 </div>
 <hr>
+        <div class="row">
 <div class="col-lg-4" >
     <form>
         <fieldset>
             <div class="form-group">
-                <label>First name</label>
+                <label> {{'FIRSTNAME' | translate}}</label>
                 <input class="form-control" ng-model="formData.newUserName" placeholder="First name" maxlength="250" minlength = "3">
             </div>
             <div class="form-group">
-                <label>Last name</label>
+                <label>{{'LASTNAME' | translate}}</label>
                 <input class="form-control" ng-model="formData.newUserLastname" placeholder="Last name" maxlength="250" minlength = "3">
             </div>
             <div class="form-group">
-                <label>Address</label>
+                <label>{{'ADDRESS' | translate}}</label>
                 <input class="form-control" ng-model="formData.newUserAddress" placeholder="Address" maxlength="250" minlength = "3">
             </div>
             <div class="form-group">
-                <label>Phone number</label>
+                <label>{{'PHONE' | translate}}</label>
                 <input class="form-control" ng-model="formData.newUserPhone" placeholder="Phone number" maxlength="250" minlength = "3">
             </div>
             <div class="form-group">
-                <label>Email</label>
+                <label>{{'EMAIL' | translate}}</label>
                 <input class="form-control" ng-model="formData.newUserEmail" placeholder="Email" maxlength="250" minlength = "3">
             </div>
             <div class="form-group">
-                <label>Password</label>
+                <label>{{'PW' | translate}}</label>
                 <input class="form-control" type="password" ng-model="formData.newUserPassword" placeholder="Password" maxlength="250" minlength = "3">
             </div>
             <div class="form-group">
-                <label>Retype password</label>
+                <label>{{'RPW' | translate}}</label>
                 <input class="form-control" type="password"  placeholder="Password" maxlength="250" minlength = "3">
             </div>
 
             <br>
-            <button class="btn btn-primary" ng-click="createUser()">Sign up</button>
-            <button class="btn btn-default" ng-click="clearUser()">Clear fields</button>
+            <button class="btn btn-primary" ng-click="createUser()">{{'CREATE' | translate}}</button>
+            <button class="btn btn-default" ng-click="clearUser()">{{'CLEAR' | translate}}</button>
 
             <input class="form-control"  ng-model="formData.newUserUsername" style="visibility: hidden">
 
         </fieldset>
     </form>
 
-</div>
+</div></div>

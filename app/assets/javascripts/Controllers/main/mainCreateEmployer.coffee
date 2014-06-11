@@ -1,5 +1,6 @@
-@CreateEmployerCtrl = ($scope, $location, employerData) ->
-
+@CreateEmployerCtrl = ($scope, $location, employerData, $translate) ->
+ $scope.changeLanguage  = (key) ->
+  $translate.use(key)
   $scope.data = employerData.data
   employerData.loadEmployers(null)
 
@@ -29,4 +30,4 @@
 
 
 
-@CreateEmployerCtrl.$inject = ['$scope', '$location', 'employerData']
+@CreateEmployerCtrl.$inject = ['$scope', '$location', 'employerData', '$translate']

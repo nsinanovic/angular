@@ -1,5 +1,6 @@
-@CvCtrl = ($scope, $routeParams, $location, $q, cvData) ->
-
+@CvCtrl = ($scope, $routeParams, $location, $q, cvData, $translate) ->
+ $scope.changeLanguage  = (key) ->
+  $translate.use(key)
   $scope.data =
     cvData: cvData.data
     currentCv:
@@ -41,4 +42,4 @@
   cvData.loadCvs(@deferred)
 
 
-@CvCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'cvData']
+@CvCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'cvData', '$translate']

@@ -1,4 +1,7 @@
-@CreateUserCtrl = ($scope, $location, userData) ->
+@CreateUserCtrl = ($scope, $location, userData, $translate) ->
+
+ $scope.changeLanguage  = (key) ->
+  $translate.use(key)
 
   $scope.data = userData.data
   userData.loadUsers(null)
@@ -31,4 +34,4 @@
     $scope.formData.newUserUsername = ''
 
 
-@CreateUserCtrl.$inject = ['$scope', '$location', 'userData']
+@CreateUserCtrl.$inject = ['$scope', '$location', 'userData', '$translate']

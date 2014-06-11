@@ -51,7 +51,7 @@ angular.module('Blog').factory('cvData', ['$http', ($http) ->
     $http.post('./cvs.json', data).success( (data) ->
 
       # Add new post to array of posts
-      cvData.data.posts.push(data)
+      cvData.data.cvs.push(data)
       console.log('Successfully created cv.')
 
     ).error( ->

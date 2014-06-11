@@ -1,5 +1,6 @@
-@CreateKategorijaCtrl = ($scope, $location, kategorijaData) ->
-
+@CreateKategorijaCtrl = ($scope, $location, kategorijaData, $translate) ->
+ $scope.changeLanguage  = (key) ->
+  $translate.use(key)
   $scope.data = kategorijaData.data
   kategorijaData.loadKategorijas(null)
 
@@ -19,4 +20,4 @@
 
 
 
-@CreateKategorijaCtrl.$inject = ['$scope', '$location', 'kategorijaData']
+@CreateKategorijaCtrl.$inject = ['$scope', '$location', 'kategorijaData', '$translate']
