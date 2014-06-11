@@ -7,7 +7,73 @@
 #= require_tree ./Services/main
 
 # Creates new Angular module called 'Blog'
-Blog =angular.module( "Blog", [])
+Blog =angular.module( "Blog", ['pascalprecht.translate'], [
+                                                                    "$translateProvider"
+                                                                    ($translateProvider) ->
+
+                                                                      # register translation table
+                                                                      $translateProvider.translations "en",
+                                                                        NEWBOOKS: "New resources"
+                                                                        LOGIN: "Login"
+                                                                        DR: "Digital repository"
+                                                                        B: "Resources"
+                                                                        UN: "Username"
+                                                                        PASS: "Password"
+                                                                        UP: "User profile"
+                                                                        EP: "Edit profile"
+                                                                        LOGOUT: "Logout"
+                                                                        LOGIN: "Login"
+                                                                        kojiJezik: "Choose language"
+                                                                        EDIT: "Edit profile"
+                                                                        Rate: "Rate this book:"
+                                                                        clear: "Clear"
+                                                                        Dodano: "This book is added by:"
+                                                                        edition: "Edition:"
+                                                                        title: "Title"
+                                                                        Data: "Data"
+                                                                        Description: "Description"
+                                                                        rated: "Rated:"
+                                                                        about: "About this book:"
+                                                                        comment: "Comment"
+                                                                        comm: "Comment"
+                                                                        download: "Downloaded books"
+                                                                        profile: "Profile"
+                                                                        first: "First Name"
+                                                                        last: "Lastname"
+                                                                        uploaded: "Uploaded books"
+
+                                                                      $translateProvider.translations("ba",
+                                                                        NEWBOOKS: "Novi resursi"
+                                                                        LOGIN: "Prijava"
+                                                                        DR: "Digitalni repozitorij"
+                                                                        B: "Resursi"
+                                                                        UN: "Korisničko ime"
+                                                                        PASS: "Šifra"
+                                                                        UP: "Korisnički profil"
+                                                                        EP: "Edituj profil"
+                                                                        LOGOUT: "Odjavi se"
+                                                                        LOGIN: "Prijavi se"
+                                                                        kojiJezik: "Odaberi jezik"
+                                                                        EDIT: "Izmjena profila"
+                                                                        Rate: "Ocijeni ovu knjigu:"
+                                                                        clear: "Obriši"
+                                                                        Dodano: "Knjigu je dodao:"
+                                                                        edition: "Izdanje:"
+                                                                        title: "Naslov"
+                                                                        Data: "Podaci"
+                                                                        Description: "Opis"
+                                                                        rated: "Ocijenilo:"
+                                                                        about: "O knjizi:"
+                                                                        comment: "Komentar"
+                                                                        comm: "Ostavi komentar"
+                                                                        download: "Preuzete knjige"
+                                                                        profile: "Profil"
+                                                                        joined: "Pridruzio"
+                                                                        first: "Ime"
+                                                                        last: "Prezime"
+                                                                        uploaded: "Dodane knjige"
+                                                                      ).preferredLanguage "ba"
+                                                                  ])
 
 
 # Sets up routing
