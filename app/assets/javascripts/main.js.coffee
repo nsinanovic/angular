@@ -61,6 +61,10 @@ Blog =angular.module( "Blog", ['pascalprecht.translate'], [
                                                                         ALLUSER: "Number of registered users"
                                                                         ALLADVARTISMENTS: "Number of advartisments"
                                                                         READ: "Read more"
+                                                                        ALLCVS: "Listing CV"
+                                                                        ALLADV: "All advartisments"
+
+
 
 
                                                                       $translateProvider.translations("ba",
@@ -112,6 +116,8 @@ Blog =angular.module( "Blog", ['pascalprecht.translate'], [
                                                                          ALLUSER: "Ukupan broj registriranih korisnika"
                                                                          ALLADVARTISMENTS: "Ukupan broj objavljenih oglasa"
                                                                          READ: "Detaljno"
+                                                                         ALLCVS: "Lista svih CV-ova"
+                                                                         ALLADV: "Svi oglasi"
                                                                       ).preferredLanguage "ba"
                                                                   ])
 

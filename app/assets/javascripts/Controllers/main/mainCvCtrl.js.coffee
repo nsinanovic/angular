@@ -42,4 +42,4 @@
   cvData.loadCvs(@deferred)
 
 
-@CvCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'cvData', '$translate']
+@CvCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'cvData']

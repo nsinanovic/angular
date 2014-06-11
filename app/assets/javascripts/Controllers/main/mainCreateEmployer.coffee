@@ -5,7 +5,7 @@
   employerData.loadEmployers(null)
 
   $scope.formData =
-    newUEmployerEmail: ''
+    newEmployerEmail: ''
     newEmployerPassword: ''
     newEmoployerName:''
     newEmployerLocation:''
@@ -24,7 +24,7 @@
   $scope.clearEmployer = ->
     $scope.formData.newEmployerEmail = ''
     $scope.formData.newEmployerPassword = ''
-    $scope.formData.newEmployerLocationm = ''
+    $scope.formData.newEmployerLocation = ''
     $scope.formData.newEmployerWebsite= ''
     $scope.formData.newEmployerName = ''
 

@@ -43,8 +43,16 @@
         <li>  <a href="#">  {{'HOME' | translate}} </a> </li>
         <li>  <a href="#">  {{'ABOUT' | translate}} </a> </li>
         <li>  <a href="#">  {{'CONTACT' | translate}} </a> </li>
+        <% if current_user %>
+            <li>  <a href="/#/cv/new">  {{'NEWCV' | translate}} </a> </li>
+            <li>  <a href="/#/advartisments">  {{'ALLADV' | translate}} </a> </li>
 
+      <%elsif current_employer %>
+            <li>  <a href="/advartisment/new">  {{'NEWADVARTISMENT' | translate}} </a> </li>
+            <li>  <a href="/cvs">  {{'ALLCVS' | translate}} </a> </li>
 
+      <%else %>
+        <%end%>
       </ul>
       <ul class="nav navbar-nav navbar-right navbar-user">
         <% if current_user %>

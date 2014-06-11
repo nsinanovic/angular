@@ -20,14 +20,8 @@
     $location.url('/')
 
   $scope.createCv = ->
-    cvData.createCv($scope.formData)
+  cvData.createCv($scope.formData)
 
-$scope.clearCv= ->
-    $scope.formData.newCvNaslov == ''
-    $scope.formData.newCvDodatno == ''
-    $scope.formData.newCvObrazovanje == ''
-    $scope.formData.newCvRadno == ''
-    $scope.formData.newCvSprema == ''
-    $scope.formData.newCvJezici == ''
+
 
 @CreateCvCtrl.$inject = ['$scope', '$location', 'cvData', '$translate']

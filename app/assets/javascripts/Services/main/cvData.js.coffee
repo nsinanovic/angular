@@ -1,4 +1,4 @@
-angular.module('Blog').factory('cvData', ['$http', ($http) ->
+angular.module('Blog').factory('cvData', ['$http', '$location', ($http) ->
 
   cvData =
     data:
@@ -52,6 +52,7 @@ angular.module('Blog').factory('cvData', ['$http', ($http) ->
 
       # Add new post to array of posts
       cvData.data.cvs.push(data)
+
       console.log('Successfully created cv.')
 
     ).error( ->
