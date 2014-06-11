@@ -1,0 +1,48 @@
+<div class="row">
+
+    <div class="col-lg-8">
+
+        <h2>Berza poslova <small>beta version 1.1</small></h2>
+    </div>
+
+
+
+</div>
+<hr>
+<div class="col-lg-4" >
+    <form>
+        <fieldset>
+            <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" ng-model="formData.newEmployerName" placeholder="Name" maxlength="250" minlength = "3">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input class="form-control" ng-model="formData.newEmployerEmail" placeholder="Email" maxlength="250" minlength = "3">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" type="password" ng-model="formData.newEmployerPassword" placeholder="Password" maxlength="250" minlength = "3">
+            </div>
+            <div class="form-group">
+                <label>Retype password</label>
+                <input class="form-control" type="password"  placeholder="Password" maxlength="250" minlength = "3">
+            </div>
+            <div class="form-group">
+                <label>Location</label>
+                <input class="form-control" ng-model="formData.newEmployerLocation" placeholder="Location" maxlength="250" minlength = "3">
+            </div>
+            <div class="form-group">
+                <label>Website</label>
+                <input class="form-control" ng-model="formData.newEmployerWebsite" placeholder="Website" maxlength="250" minlength = "3">
+            </div>
+
+            <br>
+            <button class="btn btn-primary" ng-click="createEmployer()">Sign up</button>
+            <button class="btn btn-default" ng-click="clearEmployer()">Clear fields</button>
+
+
+        </fieldset>
+    </form>
+
+</div>

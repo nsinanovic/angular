@@ -68,7 +68,11 @@
         </li>
         <% else%>
             <li class="dropdown user-dropdown">
-            <a href="#/user/new">Sign up</a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registracija <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li> <a href="#/user/new">Korisnik</a></li>
+                <li> <a href="#/employer/new">Poslodavac</a></li>
+              </ul>
             </li>
             <li class="dropdown user-dropdown">
               <%= link_to 'Login', log_in_path %>
@@ -81,30 +85,7 @@
 
 <div id="page-wrapper">
 
-<div class="row">
 
-  <div class="col-lg-8">
-
-    <h2>Berza poslova <small>beta version 1.1</small></h2>
-    </div>
-  <div class="col-lg-4">
-    <div class="breadcrumb">
-    <form role="form">
-      <div class="form-group input-group">
-
-        <input type="text" class="form-control">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">Search</button>
-                </span>
-
-
-      </div>
-    </form>
-      </div>
-  </div>
-
-</div>
-<hr>
 
 
 

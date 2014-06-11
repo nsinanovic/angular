@@ -20,8 +20,7 @@ development:
   database: blog_d
   pool: 5
   username: postgres
-  password: root
-
+  password: pqvanuzvbvvv
 
 
 
@@ -52,7 +51,8 @@ test:
   database: blog_t
   pool: 5
   username: postgres
-  password: root
+  password: pqvanuzvbvvv
+
 
 
 production:
@@ -61,6 +61,5 @@ production:
   database: blog_p
   pool: 5
   username: postgres
-  password: root
-
+  password: pqvanuzvbvvv
 

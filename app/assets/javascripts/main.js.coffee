@@ -21,6 +21,8 @@ Blog.config(['$routeProvider', ($routeProvider) ->
   .when('/kategorija/:kategorijaId', { templateUrl: '../assets/mainKategorija.html', controller: 'KategorijaCtrl' } )
   .when('/user/new', { templateUrl: '../assets/mainCreateUser.html', controller: 'CreateUserCtrl' } )
   .when('/user/:userId', { templateUrl: '../assets/mainUser.html', controller: 'UserCtrl' } )
+  .when('/employer/new', { templateUrl: '../assets/mainCreateEmployer.html', controller: 'CreateEmployerCtrl' } )
+  .when('/employer/:employerId', { templateUrl: '../assets/mainEmployer.html', controller: 'EmployerCtrl' } )
   .when('/advartisment/new', { templateUrl: '../assets/mainCreateAdvartisment.html', controller: 'CreateAdvartismentCtrl' } )
   .when('/advartisment/:advartismentId', { templateUrl: '../assets/mainAdvartisment.html', controller: 'AdvartismentCtrl' } )
   .when('/advartisment/:category', { templateUrl: '../assets/mainUser.html', controller: 'CreateAdvartismentCtrl' } )
@@ -69,6 +71,9 @@ Blog.config(['$routeProvider', ($routeProvider) ->
   .when('/advartismentlokacija/mostar',{ templateUrl: '../assets/mainMostar.html', controller: 'IndexCtrl' })
   .when('/advartismentlokacija/bihac',{ templateUrl: '../assets/mainBihac.html', controller: 'IndexCtrl' })
   .when('/advartismentlokacija/brcko',{ templateUrl: '../assets/mainBrcko.html', controller: 'IndexCtrl' })
+  .when('/main/about',{ templateUrl: '../assets/about.html', controller: 'IndexCtrl' })
+  .when('/main/contact',{ templateUrl: '../assets/contact.html', controller: 'IndexCtrl' })
+
 
 
 

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Berza poslova</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+</head>
+
+<body>
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Berza poslova</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+                <li>  <%= link_to (t "nav.home"), home_index_path %> </li>
+                <li>  <%= link_to (t "nav.about"), home_about_path %> </li>
+                <li>  <%= link_to (t "nav.contact"), home_contact_path %> </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Lokacije <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Sve lokacije </a></li>
+                        <li><a href="#">Sarajevo </a></li>
+                        <li><a href="#">Banja Luka</a></li>
+                        <li><a href="#">Mostar</a></li>
+                        <li><a href="#">Zenica</a></li>
+                        <li><a href="#">Tuzla</a></li>
+                        <li><a href="#">Bihać</a></li>
+                        <li><a href="#">Travnik</a></li>
+                        <li><a href="#">Zavidovići</a></li>
+                        <li><a href="#">Brčko</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Kategorije <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Administrativne usluge </a></li>
+                        <li><a href="#">Bankarstvo </a></li>
+                        <li><a href="#">Biotehnologija i farmacija</a></li>
+                        <li><a href="#">Drvna industrija</a></li>
+                        <li><a href="#">Državna služba i uprava</a></li>
+                        <li><a href="#">Ekonomija i finansije </a></li>
+                        <li><a href="#">Elektrotehnika i informatika </a></li>
+                        <li><a href="#">Energetika i rudarstvo</a></li>
+                        <li><a href="#">Frizeri i kozmetičari </a></li>
+                        <li><a href="#">Geologija</a></li>
+                        <li><a href="#">Građevinarstvo i arhitektura </a></li>
+                        <li><a href="#">Komercijala i prodaja</a></li>
+                        <li><a href="#">Konsalting</a></li>
+                        <li><a href="#">Marketing i PR</a></li>
+                        <li><a href="#">Mašinstvo i metalurgija </a></li>
+                        <li><a href="#">Mediji </a>
+                        <li><a href="#">Menadžment i upravljanje </a></li>
+                        <li><a href="#">Obrazovanje, kultura i sport </a></li>
+                        <li><a href="#">Osiguranje </a></li>
+                        <li><a href="#">Ostalo</a></li>
+                        <li><a href="#">Policija i zaštitarske usluge</a></li>
+                        <li><a href="#">Političke nauke </a></li>
+                        <li><a href="#">Poljoprivreda i šumarstvo </a></li>
+                        <li><a href="#">Pravo i društvene nauke</a></li>
+                        <li><a href="#">Prevodilačke usluge </a></li>
+                        <li><a href="#">Proizvodnja</a></li>
+                        <li><a href="#">Računovodstvo i revizija</a></li>
+                        <li><a href="#">Socijalne usluge</a></li>
+                        <li><a href="#">Stipendije </a></li>
+                        <li><a href="#">Teleprodaja i telemarketing</a></li>
+                        <li><a href="#">Transport i skladištenje</a></li>
+                        <li><a href="#">Trgovina </a></li>
+                        <li><a href="#">Ugostiteljstvo i turizam </a></li>
+                        <li><a href="#">Umjetnost i dizajn</a></li>
+                        <li><a href="#">Zanatske usluge </a></li>
+                        <li><a href="#">Zdravstvo i medicina  </a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right navbar-user">
+                <li class="dropdown messages-dropdown">
+                    <a href="#" > <%= link_to (t "nav.register"),users_new_path %></b></a>
+                </li>
+                <li class="dropdown user-dropdown">
+                    <a href="#" > <%= link_to (t "nav.login"), log_in_path %></b></a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+
+    <div id="page-wrapper">
+
+    </div><!-- /#wrapper -->
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <div align="center">
+
+
+        <h5> POSO.BA</h5>
+        <h5> Development team DAN</h5>
+        <h5> All rights reserved</h5>
+
+
+    </div>
+    <!-- Page Specific Plugins -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+    <script src="js/morris/chart-data-morris.js"></script>
+    <script src="js/tablesorter/jquery.tablesorter.js"></script>
+    <script src="js/tablesorter/tables.js"></script>
+</body>
+</html>
+
