@@ -1,4 +1,4 @@
-<div >
+<div>
 <div class="row" >
 
     <div class="col-lg-8">
@@ -6,13 +6,17 @@
         <h2>Berza poslova <small>beta version 1.1</small></h2>
     </div>
     <div class="col-lg-4">
+        <div style="text-align: right">
+        <a ng-click="changeLanguage('ba')" data-no-turbolink="true">BS </a> ||
+        <a ng-click="changeLanguage('en')" data-no-turbolink="true">EN</a>
+        </div>
         <div class="breadcrumb">
             <form role="form">
                 <div class="form-group input-group">
 
                     <input type="text" class="form-control"  ng-model="searchText">
                 <span class="input-group-btn">
-                  <button class="btn btn-default" type="button" disabled="disabled">Search</button>
+                  <button class="btn btn-default" type="button" disabled="disabled">{{'SEARCH' | translate}}</button>
                 </span>
 
 
@@ -33,7 +37,7 @@
                 <span class="avatar"><img src="http://placehold.it/200x100"></span><br>
 
                 {{advartisment.title}} - {{advartisment.location}}<br>
-                <a ng-click="viewAdvartisment(advartisment.id)">Read more</a>
+                <a ng-click="viewAdvartisment(advartisment.id)">{{'READ' |translate}}</a>
                 <hr>
 
             </div>
@@ -42,7 +46,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Filtriraj po lokaciji <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> {{'FILTERL' | translate}} <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="http://localhost:3000">Sve lokacije </a></li>
                             <li><a href="http://localhost:3000/#/advartismentlokacija/sarajevo">Sarajevo </a></li>
@@ -61,7 +65,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Filtriraj po kategorijama <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> {{'FILTERK' | translate}} <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="http://localhost:3000/#/advartismentkategorija/administrativne">Administrativne usluge </a></li>
                             <li><a href="http://localhost:3000/#/advartismentkategorija/bankarstvo">Bankarstvo </a></li>
@@ -104,25 +108,25 @@
                 </div>
             </div>
                 <hr>
-            <div class="bs-example" ng-cloak>
+            <div class="bs-example">
                 <ul class="list-group">
                     <li class="list-group-item">
                         <span class="badge">{{data.advartisments.length}}</span>
-                        Ukupan broj objavljenih oglasa
-                        {{'LOGIN' | translate}}
-                        <button ng-click="changeLanguage('ba')">BA</button>
-                        <button ng-click="changeLanguage('en')" >EN</button>
+                        {{'ALLADVARTISMENTS' | translate}}
+
+
 
                     </li>
                     <li class="list-group-item">
                         <span class="badge">{{data1.users.length}}</span>
-                        Ukupan broj registriranih korisnika
+                        {{'ALLUSER' | translate}}
                     </li>
                     <li class="list-group-item">
                         <span class="badge">{{data2.employers.length}}</span>
-                        Ukupan broj registriranih firmi
+                        {{'ALLEMPLOYER' | translate}}
                     </li>
                 </ul>
+
             </div>
 
         </div>
