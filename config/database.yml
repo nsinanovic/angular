@@ -20,8 +20,8 @@ development:
   database: blog_d
   pool: 5
   username: postgres
-  password: root
-  port: 5433
+  password: pqvanuzvbvvv
+  port: 5432
 
 
 
@@ -52,8 +52,8 @@ test:
   database: blog_t
   pool: 5
   username: postgres
-  password: root
-  port: 5433
+  password: pqvanuzvbvvv
+  port: 5432
 
 
 
@@ -63,6 +63,6 @@ production:
   database: blog_p
   pool: 5
   username: postgres
-  password: root
-  port: 5433
+  password: pqvanuzvbvvv
+  port: 5432
 
