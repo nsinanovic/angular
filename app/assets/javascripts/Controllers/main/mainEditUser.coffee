@@ -1,43 +1,39 @@
 @EditUserCtrl = ($scope, $routeParams, $location, $q, userData, $translate) ->
- $scope.changeLanguage  = (key) ->
+  $scope.changeLanguage  = (key) ->
   $translate.use(key)
-  $scope.data =
-    userData: userData.data
-    currentUser:
-      email: 'Loading...'
-      password: ''
+  $scope.data = userData.data
+  $scope.data.userId = $routeParams.userId
+  user = _.findWhere(userData.data.users, { id: parseInt($scope.data.userId) })
+  userData.loadUsers(null)
 
   $scope.formData =
-    newUserEmail: ''
-    newUserPassword: ''
+    editUserName: user.name
+    editUserLastname: user.lastname
+    editUserPassword: user.password
+    editUserAddress: user.address
+    editUserPhone: user.phone
+    editUserEmail: user.email
+    editUserId: user.id
 
-  $scope.data.userId = $routeParams.userId
+  $scope.navNewUser = ->
+    $location.url('/user/new')
 
   $scope.navHome = ->
     $location.url('/')
 
+  $scope.updateUser = ->
+    userData.editUser($scope.formData)
 
-  $scope.navEditUser =  ->
-    $location.url('/user/'+ data.currentUser.id +'/edit')
-  # This will be run once the loadPosts successfully completes (or immediately
-  # if data is already loaded)
-  $scope.prepUserData = ->
-    user = _.findWhere(userData.data.users, { id: parseInt($scope.data.userId) })
-    $scope.data.currentUser.email = user.email
-    $scope.data.currentUser.password = user.password
+  $scope.removeUser = ->
+    userData.deleteUser($scope.formData)
 
-  $scope.editUser = ->
-    if $scope.formData.newUserEmail != '' and $scope.formData.newUserPassword != ''
-      user = _.findWhere(userData.data.users, { id: parseInt($scope.data.userId) })
-      user.email = $scope.formData.newUserEmail
-      user.password = $scope.formData.newUserPassword
-
-  # Create promise to be resolved after posts load
-  @deferred = $q.defer()
-  @deferred.promise.then($scope.prepUserData)
-
-  # Provide deferred promise chain to the loadPosts function
-  userData.loadUsers(@deferred)
+  $scope.clearUser = ->
+    $scope.formData.editUserName = ''
+    $scope.formData.editUserLastname = ''
+    $scope.formData.editUserAddress=''
+    $scope.formData.editUserEmial = ''
+    $scope.formData.editUserPhone = ''
+    $scope.formData.editUserPassword = ''
 
 
 @EditUserCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'userData', '$translate']

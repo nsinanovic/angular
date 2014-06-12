@@ -48,6 +48,27 @@ angular.module('Blog').factory('postData', ['$http', ($http) ->
 
     return true
 
+    postData.deletePost = (updatePost) ->
+      #create data object to delete post
+    data =
+      delete_post:
+        id: updatePost.editPostId
+        title: updatePost.editPostTitle
+        contents: updatePost.editPostContents
+
+    # Do POST request to /posts.json
+    $http.post('./posts.json', data).success( (data) ->
+
+      # Add new post to array of posts
+      postData.data.posts.push(data)
+      console.log('Successfully deleted post.')
+
+    ).error( ->
+      console.error('Failed to delete post.')
+    )
+
+    return true
+
   return postData
 
 ])
