@@ -20,6 +20,7 @@
 
   $scope.createEmployer = ->
     employerData.createEmployer($scope.formData)
+    $location.url('/')
 
   $scope.clearEmployer = ->
     $scope.formData.newEmployerEmail = ''

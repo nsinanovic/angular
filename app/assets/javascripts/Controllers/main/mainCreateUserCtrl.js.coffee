@@ -23,6 +23,7 @@
 
   $scope.createUser = ->
     userData.createUser($scope.formData)
+    $location.url('/')
 
   $scope.clearUser = ->
     $scope.formData.newUserEmail = ''

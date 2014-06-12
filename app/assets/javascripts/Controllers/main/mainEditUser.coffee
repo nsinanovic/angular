@@ -1,10 +1,10 @@
-@EditUserCtrl = ($scope, $routeParams, $location, $q, userData, $translate) ->
-  $scope.changeLanguage  = (key) ->
-  $translate.use(key)
+@EditUserCtrl = ($scope, $routeParams, $location, userData) ->
+
   $scope.data = userData.data
   $scope.data.userId = $routeParams.userId
   user = _.findWhere(userData.data.users, { id: parseInt($scope.data.userId) })
   userData.loadUsers(null)
+
 
   $scope.formData =
     editUserName: user.name
@@ -23,6 +23,7 @@
 
   $scope.updateUser = ->
     userData.editUser($scope.formData)
+    $location.url('/')
 
   $scope.removeUser = ->
     userData.deleteUser($scope.formData)
@@ -36,4 +37,6 @@
     $scope.formData.editUserPassword = ''
 
 
-@EditUserCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'userData', '$translate']
+
+@EditUserCtrl.$inject = ['$scope', '$routeParams','$location', 'userData']
+

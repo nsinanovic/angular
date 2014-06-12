@@ -63,7 +63,7 @@
     $scope.formData.newAdvartismentDescription = ''
     $scope.formData.newAdvartismentLocation = ''
     $scope.formData.newAdvartismentCategory = ''
-    $scope.newAdvartismentExpire = ''
+    $scope.formData.newAdvartismentExpire = ''
 
 
 @CreateAdvartismentCtrl.$inject = ['$scope', '$location', 'advartismentData', '$translate']

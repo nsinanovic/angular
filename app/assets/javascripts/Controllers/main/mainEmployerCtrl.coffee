@@ -9,6 +9,7 @@
       name: ''
       location: ''
       website: ''
+      created_t:''
 
   $scope.data.employerId = $routeParams.employerId
 
@@ -27,6 +28,7 @@
     $scope.data.currentEmployer.name = employer.name
     $scope.data.currentEmployer.location = employer.location
     $scope.data.currentEmployer.website = employer.website
+    $scope.data.currentEmployer.created_at = employer.created_at
 
   # Create promise to be resolved after posts load
   @deferred = $q.defer()

@@ -48,7 +48,7 @@
             <li>  <a href="/#/advartisments">  {{'ALLADV' | translate}} </a> </li>
 
       <%elsif current_employer %>
-            <li>  <a href="/advartisment/new">  {{'NEWADVARTISMENT' | translate}} </a> </li>
+            <li>  <a href="#/advartisment/new">  {{'NEWADVARTISMENT' | translate}} </a> </li>
             <li>  <a href="/cvs">  {{'ALLCVS' | translate}} </a> </li>
 
       <%else %>
@@ -59,8 +59,8 @@
         <li class="dropdown user-dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <%= current_user.email %> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><%= link_to (t "nav.profile"),current_user%></li>
-            <li><a href="#"> <%= link_to (t "user.edit"), edit_user_path(current_user.id) %></a></li>
+            <li><a href="#user/<%=current_user.id%>"> Profil </a></li>
+            <li><a href="#user/edit/<%=current_user.id%>"> Postavke </a></li>
             <li class="divider"></li>
             <li><a href="#"></i> <%= link_to (t "nav.logout"), log_out_path %></a></li>
           </ul>
@@ -69,7 +69,8 @@
             <li class="dropdown user-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <%= current_employer.email %> <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><%= link_to (t "nav.profile"),current_employer%></li>
+                <li><a href="#employer/<%=current_employer.id%>"> Profil </a></li>
+                <li><a href="#employer/edit/<%=current_employer.id%>"> Postavke </a></li>
                 <li class="divider"></li>
                 <li><a href="#"></i> <%= link_to (t "nav.logout"), log_out_path %></a></li>
               </ul>
