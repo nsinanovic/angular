@@ -37,7 +37,12 @@
 <div class="container" style="margin-top: 40px;" >
   <form  style="align-content: center">
     <fieldset>
-
+        <div class="row" >
+            <div class="col-lg-8">
+                <label><strong> {{ 'TITLE' | translate }}</strong></label> <br>
+                <textarea  style="height: 50px; width:670px"  ng-model="formData.newCvNaslov" placeholder=""></textarea>    <hr>
+            </div>
+        </div>
         <div class="row" >
             <div class="col-lg-8">
                 <label><strong> {{ 'EDUCATION' | translate }}</strong></label> <br>

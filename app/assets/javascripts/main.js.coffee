@@ -135,6 +135,8 @@ Blog.config(['$routeProvider', ($routeProvider) ->
   .when('/user/new', { templateUrl: '../assets/mainCreateUser.html', controller: 'CreateUserCtrl' } )
   .when('/user/:userId', { templateUrl: '../assets/mainUser.html', controller: 'UserCtrl' } )
   .when('/user/edit/:userId', { templateUrl: '../assets/mainEditUser.html', controller: 'EditUserCtrl' } )
+  .when('/cv/edit/:cvId', { templateUrl: '../assets/mainEditCv.html', controller: 'EditCvCtrl' } )
+
   .when('/employer/new', { templateUrl: '../assets/mainCreateEmployer.html', controller: 'CreateEmployerCtrl' } )
   .when('/employer/:employerId', { templateUrl: '../assets/mainEmployer.html', controller: 'EmployerCtrl' } )
   .when('/advartisment/new', { templateUrl: '../assets/mainCreateAdvartisment.html', controller: 'CreateAdvartismentCtrl' } )

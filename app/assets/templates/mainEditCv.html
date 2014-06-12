@@ -1,17 +1,154 @@
+<div class="row" >
 
-<div class="col-lg-4" style="align-content: center">
-    <div class="panel panel-primary">
+    <div class="col-lg-8">
 
-        <div class="panel-heading"  > Editovanje Cv-a</div>
+        <h2>Berza poslova <small>beta version 1.1</small></h2>
+    </div>
+    <div class="col-lg-4">
+        <div style="text-align: right">
+            <a ng-click="changeLanguage('ba')" data-no-turbolink="true">BS </a> ||
+            <a ng-click="changeLanguage('en')" data-no-turbolink="true">EN</a>
+        </div>
+        <div class="breadcrumb">
+            <form role="form">
+                <div class="form-group input-group">
 
-        <div class="container" style="margin-top: 40px;" >
-            <input class="span12" ng-model="formData.editNaslov" type="text" maxlength="250" value="{{ formData.editNaslov }}"/> <br><br>
-            <textarea class="span12" style="height: 250px" ng-model="formData.editDodatno">{{ formData.editDodatno }}</textarea> <br><br>
-            <button class="btn btn-primary" ng-click="updateCv()">Edit</button>
-            <button class="btn btn-danger" ng-click="removeCv()">Destroy</button>
+                    <input type="text" class="form-control"  ng-model="searchText">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" disabled="disabled">{{'SEARCH' | translate}}</button>
+                </span>
 
-            <br> <br>
 
+                </div>
+            </form>
         </div>
     </div>
 
+
+</div>
+<hr>
+
+
+<div class="row">
+    <div class="col-lg-8" style="align-content: center">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{ 'EDITCV' | translate }}</div>
+
+            <div class="container" style="margin-top: 40px;" >
+                <form>
+                    <fieldset>
+                        <div class="row" >
+                            <div class="col-lg-8">
+                                <label><strong> {{ 'TITLE' | translate }}</strong></label> <br>
+                                <textarea  style="height: 50px; width:670px"  ng-model="formData.editCvNaslov" placeholder=""></textarea>    <hr>
+                            </div>
+                        </div>
+                        <div class="row" >
+                            <div class="col-lg-8">
+                                <label><strong> {{ 'EDUCATION' | translate }}</strong></label> <br>
+                                <textarea  style="height: 50px; width:670px"  ng-model="formData.editCvObrazovanje" placeholder=""></textarea>    <hr>
+                            </div>
+                        </div>
+                        <div class="row" >
+                            <div class="col-lg-8">
+                                <label><strong>{{ 'DEGREE' | translate }}</strong></label> <br>
+                                <textarea  style="height: 50px; width:670px" ng-model="formData.editCvStrucnaSprema" placeholder=""></textarea>    <hr>
+                            </div>
+                        </div>
+
+                        <div class="row" >
+                            <div class="col-lg-8">
+                                <label><strong >{{ 'WORK' | translate }}</strong></label> <br>
+                                <textarea style="height: 50px; width:670px" ng-model="formData.editCvRadnoIskustvo" placeholder=""></textarea> <hr>
+                            </div>
+                        </div>
+
+                        <div class="row" >
+                            <div class="col-lg-8">
+                                <label><strong >{{ 'LANGUAGES' | translate }}</strong></label> <br>
+                                <textarea class="span12" style="height: 50px; width:670px" ng-model="formData.editCvJezici" placeholder=""></textarea> <hr>
+                            </div>
+                        </div>
+
+                        <div class="row" >
+                            <div class="col-lg-8">
+                                <label><strong >{{ 'SKILLS' | translate }}</strong></label> <br>
+                                <textarea  style="height: 50px; width:670px" ng-model="formData.editCvVjestine" placeholder=""></textarea> <hr>
+                            </div>
+                        </div>
+
+                        <div class="row" >
+                            <div class="col-lg-8">
+                                <label><strong >{{ 'ADDINFORMATION' | translate }}</strong></label> <br>
+                                <textarea  style="height: 50px; width:670px" ng-model="formData.editCvDodatno" placeholder=""></textarea> <hr>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" ng-click="updateCv()">{{'EDIT' | translate}}</button>
+                        <button class="btn btn-danger" ng-click="removeCv()">Destroy</button>
+
+
+                    </fieldset>
+                </form>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="bs-example">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="badge">14.12.2011.</span>
+                    Datum kreiranja cv-a
+                </li>
+
+                <li class="list-group-item">
+                    <span class="badge">5</span>
+                    Broj mojih cv-a
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <div class="panel panel-default">
+            <div class="panel-heading">{{ 'NOTIFICATION' | translate }}</div>
+            <div class="panel-body">
+                Ekonomija
+            </div>
+            <div class="panel-body">
+                Bankarstvo
+            </div>
+        </div>
+        <hr>
+        <div class="bs-example">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="badge">>></span>
+                    <a href="/#/cv/new">{{ 'NEWCV' | translate }} </a>
+                </li>
+                <li class="list-group-item">
+                    <span class="badge">>></span>
+                    <a href="/#/cv/save">{{ 'PRINTCV' | translate }} </a>
+                </li>
+                <li class="list-group-item">
+                    <span class="badge">>></span>
+                    <a href="/#/cv/print">{{ 'SAVECV' | translate }} </a>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <div class="bs-example">
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">CV</h4>
+                    <p class="list-group-item-text"> Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+
+                </a>
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">CV</h4>
+                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>

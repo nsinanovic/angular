@@ -1,6 +1,7 @@
 @IndexCtrl = ( $scope, $location, $http, advartismentData,userData, employerData, $translate) ->
  $scope.changeLanguage  = (key) ->
   $translate.use(key)
+
   $scope.data = advartismentData.data
   advartismentData.loadAdvartisments(null)
 
@@ -16,7 +17,6 @@
 
   $scope.navNewAdvartisment = ->
     $location.url('/advartisment/new')
-
 
 
 

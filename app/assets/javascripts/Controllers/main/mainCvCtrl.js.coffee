@@ -1,6 +1,7 @@
 @CvCtrl = ($scope, $routeParams, $location, $q, cvData, $translate) ->
- $scope.changeLanguage  = (key) ->
-  $translate.use(key)
+  $scope.changeLanguage  = (key) ->
+    $translate.use(key)
+
   $scope.data =
     cvData: cvData.data
     currentCv:
@@ -21,6 +22,9 @@
   $scope.navHome = ->
     $location.url('/')
 
+  $scope.editCv = (cvId) ->
+    $location.url('/cv/edit/'+cvId)
+
   # This will be run once the loadPosts successfully completes (or immediately
   # if data is already loaded)
   $scope.prepCvsData = ->
@@ -33,6 +37,7 @@
     $scope.data.currentCv.jezici = cv.jezici
     $scope.data.currentCv.vjestine = cv.vjestine
     $scope.data.currentCv.ostaleInformacije = cv.ostaleInformacije
+    $scope.data.currentCv.id = cv.id
 
   # Create promise to be resolved after posts load
   @deferred = $q.defer()

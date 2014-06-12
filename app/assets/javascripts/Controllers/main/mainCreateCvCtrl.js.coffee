@@ -1,8 +1,12 @@
 @CreateCvCtrl = ($scope, $location, cvData, $translate) ->
- $scope.changeLanguage  = (key) ->
-  $translate.use(key)
+
+  $scope.changeLanguage  = (key) ->
+    $translate.use(key)
+
   $scope.data = cvData.data
   cvData.loadCvs(null)
+
+
 
   $scope.formData =
     newCvNaslov: ''
@@ -11,7 +15,8 @@
     newCvRadno: ''
     newCvSprema: ''
     newCvJezici: ''
-    newCvDodatno:''
+    newCvVjestine:''
+
 
   $scope.navNewCv = ->
     $location.url('/cv/new')
@@ -20,7 +25,7 @@
     $location.url('/')
 
   $scope.createCv = ->
-  cvData.createCv($scope.formData)
+    cvData.createCv($scope.formData)
 
 
 
