@@ -97,17 +97,14 @@
         </div>
         <hr>
         <div class="bs-example">
-            <div class="list-group">
+            <div class="list-group" ng-repeat="cv in data1.cvs | filter:{ user_id: data.userId}">
                 <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">CV</h4>
-                    <p class="list-group-item-text"> Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <h4 class="list-group-item-heading">{{cv.naslov}}</h4>
+                    <p class="list-group-item-text">  {{data.userId}} </p>
 
 
                 </a>
-                <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">CV</h4>
-                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                </a>
+
             </div>
         </div>
 

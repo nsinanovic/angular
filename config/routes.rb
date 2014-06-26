@@ -1,6 +1,8 @@
 Blog::Application.routes.draw do
 
 
+  resources :locations
+
   resources :employers
 
   get "log_out" => "sessions#destroy", :as => "log_out"

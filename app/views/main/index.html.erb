@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="Blog">
 <head>
+
+
+
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -19,7 +24,7 @@
   <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
 </head>
 
-<body>
+<body ng-app="mapComponentsApp">
 
 <div id="wrapper">
 
@@ -50,7 +55,10 @@
 
       <%elsif current_employer %>
             <li>  <a href="#/advartisment/new">  {{'NEWADVARTISMENT' | translate}} </a> </li>
-            <li>  <a href="#/cvs">  {{'ALLCVS' | translate}} </a> </li>
+            <li>  <a href="#/myadvartisment/<%=current_employer.name%>">  Moji oglasi  </a> </li>
+
+
+
 
       <%else %>
         <%end%>
@@ -109,6 +117,13 @@
   <%elsif current_employer %> employer je logovan
   <% else %> nije niko logovan
   <% end %>
+
+
+
+
+
+
+
 
 
 </div><!-- /#page-wrapper -->

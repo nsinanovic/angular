@@ -28,6 +28,7 @@ class CvsController < ApplicationController
       new_cv.jezici = params[:new_cv][:jezici]
       new_cv.vjestine = params[:new_cv][:vjestine]
       new_cv.ostaleInformacije = params[:new_cv][:ostaleInformacije]
+      new_cv.user_id = current_user.id
 
       # Confirm post is valid and save or return HTTP error
       if new_cv.valid?

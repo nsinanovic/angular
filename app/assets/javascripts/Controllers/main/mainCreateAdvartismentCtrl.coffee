@@ -1,4 +1,5 @@
 @CreateAdvartismentCtrl = ($scope, $location, advartismentData, $translate) ->
+ $translate.use('ba')
  $scope.changeLanguage  = (key) ->
   $translate.use(key)
   $scope.data = advartismentData.data

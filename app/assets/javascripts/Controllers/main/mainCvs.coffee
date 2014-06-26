@@ -1,4 +1,5 @@
 @CvsCtrl = ( $scope, $location, $http, cvData, $translate) ->
+  $translate.use('ba')
   $scope.changeLanguage  = (key) ->
     $translate.use(key)
 

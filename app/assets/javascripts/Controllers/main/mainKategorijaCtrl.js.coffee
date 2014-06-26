@@ -1,4 +1,5 @@
 @KategorijaCtrl = ($scope, $routeParams, $location, $q, kategorijaData, $translate) ->
+ $translate.use('ba')
  $scope.changeLanguage  = (key) ->
   $translate.use(key)
   $scope.data =

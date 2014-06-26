@@ -1,5 +1,5 @@
 @CreateUserCtrl = ($scope, $location, userData, $translate) ->
-
+ $translate.use('ba')
  $scope.changeLanguage  = (key) ->
   $translate.use(key)
 

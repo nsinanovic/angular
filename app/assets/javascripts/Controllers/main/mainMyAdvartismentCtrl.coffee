@@ -1,4 +1,4 @@
-@IndexCtrl = ( $scope, $location, $http, advartismentData,userData, employerData, $translate) ->
+@MyAdvartismentCtrl = ( $scope,$routeParams, $location, $http, advartismentData,userData, employerData, $translate) ->
   $translate.use('ba')
   $scope.changeLanguage  = (key) ->
     $translate.use(key)
@@ -6,6 +6,8 @@
 
   $scope.data = advartismentData.data
   advartismentData.loadAdvartisments(null)
+
+  $scope.data.employer = $routeParams.employer
 
 
   $scope.data1 = userData.data
@@ -23,4 +25,4 @@
 
 
 
-@IndexCtrl.$inject = [ '$scope', '$location', '$http', 'advartismentData','userData', 'employerData','$translate']
+@MyAdvartismentCtrl.$inject = [ '$scope', '$routeParams','$location', '$http', 'advartismentData','userData', 'employerData','$translate']

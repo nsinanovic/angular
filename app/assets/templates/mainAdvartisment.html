@@ -1,24 +1,33 @@
-<!-- <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <a href="#" class="brand">My blog</a>
-        <ul class="nav pull-right">
-            <li><a ng-click="navNewAdvartisment()">New Advartisment</a></li>
-        </ul>
+
+<div class="row" >
+
+    <div class="col-lg-8">
+
+        <h2>Berza poslova <small>beta version 1.1</small></h2>
     </div>
+    <div class="col-lg-4">
+        <div style="text-align: right">
+            <a ng-click="changeLanguage('ba')" data-no-turbolink="true">BS </a> ||
+            <a ng-click="changeLanguage('en')" data-no-turbolink="true">EN</a>
+        </div>
+        <div class="breadcrumb">
+            <form role="form">
+                <div class="form-group input-group">
+
+                    <input type="text" class="form-control"  ng-model="searchText">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" disabled="disabled">{{'SEARCH' | translate}}</button>
+                </span>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
 </div>
-
-<div class="container" style="margin-top: 40px">
-    <h1 class="text-center">{{data.currentAdvartisment.title}}</h1>
-    <div class="row">
-        <p>{{data.currentAdvartisment.description}}</p>
-    </div>
-    <div class="row">
-        <button class="btn btn-default" ng-click="editAdvartisment()">Edit</button>
-    </div>
-</div>
-
--->
-
+<hr>
 <div class="row">
 
     <div class="col-lg-8">

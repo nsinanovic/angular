@@ -1,4 +1,5 @@
 @CreateKategorijaCtrl = ($scope, $location, kategorijaData, $translate) ->
+ $translate.use('ba')
  $scope.changeLanguage  = (key) ->
   $translate.use(key)
   $scope.data = kategorijaData.data

@@ -1,5 +1,7 @@
-@EditCvCtrl = ($scope, $routeParams, $location, cvData) ->
-
+@EditCvCtrl = ($scope, $routeParams, $location, cvData, $translate) ->
+  $translate.use('ba')
+  $scope.changeLanguage  = (key) ->
+    $translate.use(key)
   $scope.data = cvData.data
   $scope.data.cvId = $routeParams.cvId
   cv = _.findWhere(cvData.data.cvs, { id: parseInt($scope.data.cvId) })
@@ -27,5 +29,5 @@
     $location.url('/')
 
 
-@EditCvCtrl.$inject = ['$scope', '$routeParams','$location', 'cvData']
+@EditCvCtrl.$inject = ['$scope', '$routeParams','$location', 'cvData', '$translate']
 

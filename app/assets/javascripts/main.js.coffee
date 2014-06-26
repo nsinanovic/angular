@@ -118,7 +118,7 @@ Blog =angular.module( "Blog", ['pascalprecht.translate'], [
                                                                          READ: "Detaljno"
                                                                          ALLCVS: "Lista svih CV-ova"
                                                                          ALLADV: "Svi oglasi"
-                                                                      ).preferredLanguage "ba"
+                                                                      ).preferredLanguage
                                                                   ])
 
 
@@ -154,6 +154,7 @@ Blog.config(['$routeProvider', ($routeProvider) ->
   .when('/advartismentkategorija/geologija',{ templateUrl: '../assets/mainGeologija.html', controller: 'IndexCtrl' })
   .when('/advartismentkategorija/gradjevinarstvo',{ templateUrl: '../assets/mainGradjevinarstvo.html', controller: 'IndexCtrl' })
   .when('/advartismentkategorija/komercijala',{ templateUrl: '../assets/mainKomercijala.html', controller: 'IndexCtrl' })
+  .when('/myadvartisment/:employer',{ templateUrl: '../assets/mainMyAdvartisment.html', controller: 'MyAdvartismentCtrl' })
   .when('/advartismentkategorija/konsalting',{ templateUrl: '../assets/mainKonsalting.html', controller: 'IndexCtrl' })
   .when('/advartismentkategorija/marketing',{ templateUrl: '../assets/mainMarketing.html', controller: 'IndexCtrl' })
   .when('/advartismentkategorija/masinstvo',{ templateUrl: '../assets/mainMasinstvo.html', controller: 'IndexCtrl' })

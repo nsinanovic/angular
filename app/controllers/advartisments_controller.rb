@@ -24,6 +24,8 @@ class AdvartismentsController < ApplicationController
       new_advartisment.location = params[:new_advartisment][:location]
       new_advartisment.category = params[:new_advartisment][:category]
       new_advartisment.expire = params[:new_advartisment][:expire]
+      new_advartisment.employer = current_employer.name
+
 
       # Confirm post is valid and save or return HTTP error
       if new_advartisment.valid?

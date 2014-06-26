@@ -1,4 +1,5 @@
 @CreateEmployerCtrl = ($scope, $location, employerData, $translate) ->
+ $translate.use('ba')
  $scope.changeLanguage  = (key) ->
   $translate.use(key)
   $scope.data = employerData.data

@@ -1,6 +1,13 @@
-@UserCtrl = ($scope, $routeParams, $location, $q, userData, $translate) ->
- $scope.changeLanguage  = (key) ->
-  $translate.use(key)
+@UserCtrl = ($scope, $routeParams, $location, $q, userData, cvData, $translate) ->
+  $translate.use('ba')
+
+  $scope.changeLanguage  = (key) ->
+    $translate.use(key)
+
+
+  $scope.data1 = cvData.data
+  cvData.loadCvs(null)
+
   $scope.data =
     userData: userData.data
     currentUser:
@@ -40,4 +47,4 @@
   userData.loadUsers(@deferred)
 
 
-@UserCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'userData', '$translate']
+@UserCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'userData', 'cvData','$translate']

@@ -1,6 +1,10 @@
 @EmployerCtrl = ($scope, $routeParams, $location, $q, employerData, $translate) ->
- $scope.changeLanguage  = (key) ->
-  $translate.use(key)
+
+  $translate.use('ba')
+
+  $scope.changeLanguage  = (key) ->
+    $translate.use(key)
+
   $scope.data =
     employerData: employerData.data
     currentEmployer:

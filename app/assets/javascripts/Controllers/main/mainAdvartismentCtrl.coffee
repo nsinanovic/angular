@@ -1,6 +1,9 @@
 @AdvartismentCtrl = ($scope, $routeParams, $location, $q, advartismentData, $translate) ->
- $scope.changeLanguage  = (key) ->
-  $translate.use(key)
+  $translate.use('ba')
+
+  $scope.changeLanguage  = (key) ->
+    $translate.use(key)
+
   $scope.data =
     advartismentData: advartismentData.data
     currentAdvartisment:

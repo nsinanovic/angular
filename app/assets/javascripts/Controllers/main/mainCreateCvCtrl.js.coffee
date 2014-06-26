@@ -1,5 +1,5 @@
 @CreateCvCtrl = ($scope, $location, cvData, $translate) ->
-
+  $translate.use('ba')
   $scope.changeLanguage  = (key) ->
     $translate.use(key)
 

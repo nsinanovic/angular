@@ -8,6 +8,7 @@ class CreateAdvartisments < ActiveRecord::Migration
       t.string :location
       t.string :category
 
+
       t.timestamps
     end
   end

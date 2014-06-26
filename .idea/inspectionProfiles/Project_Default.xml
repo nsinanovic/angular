@@ -5,11 +5,26 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="4">
+          <list size="19">
             <item index="0" class="java.lang.String" itemvalue="ng-click" />
             <item index="1" class="java.lang.String" itemvalue="ng-model" />
             <item index="2" class="java.lang.String" itemvalue="ng-controller" />
             <item index="3" class="java.lang.String" itemvalue="ng-cloak" />
+            <item index="4" class="java.lang.String" itemvalue="ng-view" />
+            <item index="5" class="java.lang.String" itemvalue="ng-app" />
+            <item index="6" class="java.lang.String" itemvalue="latitude" />
+            <item index="7" class="java.lang.String" itemvalue="say-where" />
+            <item index="8" class="java.lang.String" itemvalue="longitude" />
+            <item index="9" class="java.lang.String" itemvalue="ng-class" />
+            <item index="10" class="java.lang.String" itemvalue="ng-show" />
+            <item index="11" class="java.lang.String" itemvalue="todo-maps" />
+            <item index="12" class="java.lang.String" itemvalue="ng-repeat" />
+            <item index="13" class="java.lang.String" itemvalue="ng-dblclick" />
+            <item index="14" class="java.lang.String" itemvalue="ng-pluralize" />
+            <item index="15" class="java.lang.String" itemvalue="count" />
+            <item index="16" class="java.lang.String" itemvalue="when" />
+            <item index="17" class="java.lang.String" itemvalue="ng-hide" />
+            <item index="18" class="java.lang.String" itemvalue="ng-submit" />
           </list>
         </value>
       </option>
