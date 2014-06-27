@@ -4,6 +4,13 @@
   $scope.changeLanguage  = (key) ->
     $translate.use(key)
 
+  d=new Date()
+  m= d.getMonth()+1
+  y= d.getFullYear()
+  $scope.datum = y+'-'+m+'-'+d.getDate()
+
+
+
   $scope.data =
     advartismentData: advartismentData.data
     currentAdvartisment:
@@ -11,6 +18,8 @@
       description: ''
       location: ''
       category: ''
+      employer: ''
+      days: ''
 
   $scope.data.advartismentId = $routeParams.advartismentId
 
@@ -28,6 +37,9 @@
     $scope.data.currentAdvartisment.description = advartisment.description
     $scope.data.currentAdvartisment.location = advartisment.location
     $scope.data.currentAdvartisment.category = advartisment.category
+    $scope.data.currentAdvartisment.employer = advartisment.employer
+    $scope.data.currentAdvartisment.expire = advartisment.expire
+    $scope.data.currentAdvartisment.days = advartisment.expire
 
   # Create promise to be resolved after posts load
   @deferred = $q.defer()
