@@ -28,12 +28,15 @@ angular.module('Blog').factory('userData', ['$http', ($http) ->
   y= d.getFullYear()
 
 
-  userData.createUser = (newUser) ->
+  userData.createUser = (newUser,location) ->
     # Client-side data validation
-    if newUser.newUserEmail == '' or newUser.newUserPassword == '' or  newUser.newUserName == ''  or newUser.newUserLastname == '' or newUser.newUserAddress==''
+    if newUser.newUserEmail == '' or newUser.newUserPassword == '' or  newUser.newUserName == ''  or newUser.newUserLastname == '' or newUser.newUserAddress=='' or  newUser.newUserPhone == ''
       alert('Neither the Title nor the Body are allowed to be left blank.')
       return false
 
+    if newUser.newUserPassword != newUser.newUserProvjera
+      alert('Invalid confirmation of password.')
+      return false
     # Create data object to POST
     data =
       new_user:
@@ -55,6 +58,7 @@ angular.module('Blog').factory('userData', ['$http', ($http) ->
     ).error( ->
       console.error('Failed to create new user.')
     )
+    location.url('/')
 
     return true
 

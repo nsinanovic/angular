@@ -1,7 +1,7 @@
 @CreateUserCtrl = ($scope, $location, userData, $translate) ->
- $translate.use('ba')
- $scope.changeLanguage  = (key) ->
-  $translate.use(key)
+  $translate.use('ba')
+  $scope.changeLanguage  = (key) ->
+   $translate.use(key)
 
   $scope.data = userData.data
   userData.loadUsers(null)
@@ -14,6 +14,7 @@
     newUserAddress:''
     newUserPhone:''
     newUserUsername: ''
+    newUserProvjera: ''
 
   $scope.navNewUser = ->
     $location.url('/user/new')
@@ -22,8 +23,8 @@
     $location.url('/')
 
   $scope.createUser = ->
-    userData.createUser($scope.formData)
-    $location.url('/')
+    userData.createUser($scope.formData,$location)
+
 
   $scope.clearUser = ->
     $scope.formData.newUserEmail = ''

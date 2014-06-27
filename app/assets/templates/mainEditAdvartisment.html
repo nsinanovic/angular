@@ -1,0 +1,76 @@
+<div class="row" >
+
+    <div class="col-lg-8">
+
+        <h2>Berza poslova <small>beta version 1.1</small></h2>
+    </div>
+    <div class="col-lg-4">
+        <div style="text-align: right">
+            <a ng-click="changeLanguage('ba')" data-no-turbolink="true">BS </a> ||
+            <a ng-click="changeLanguage('en')" data-no-turbolink="true">EN</a>
+        </div>
+        <div class="breadcrumb">
+            <form role="form">
+                <div class="form-group input-group">
+
+                    <input type="text" class="form-control"  ng-model="searchText">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" disabled="disabled">{{'SEARCH' | translate}}</button>
+                </span>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<hr>
+
+
+<div class="row">
+
+    <div class="col-lg-8">
+        <span class="avatar"><img src="http://placehold.it/200x200"></span>
+
+
+        <div class="page-header">
+            <h1 id="container">Informacije o oglasu </h1>
+        </div>
+        <div class="bs-example">
+            <div class="jumbotron">
+                <h3 >Update advartisment</h3>
+                <form>
+                    <fieldset>
+                        <label><strong>Title</strong></label>
+                        <input class="form-control" ng-model="formData.editAdvartismentTitle" type="text" maxlength="250" value="{{ formData.editAdvartismentTitle }}"><br>
+                        <label><strong>Description</strong></label>
+                        <input class="form-control" ng-model="formData.editAdvartismentDescription" type="text" maxlength="250" value="{{ formData.editAdvartismentDescription }}"><br>
+                        <label><strong>Location</strong></label>
+                        <input class="form-control" ng-model="formData.editAdvartismentLocation" type="text" maxlength="250" value="{{ formData.editAdvartismentLocation }}"><br>
+                        <label><strong>{{ 'CATEGORY' | translate }}</strong></label><br>
+
+                        <label><strong>Expire</strong></label>
+                        <input class="form-control" ng-model="formData.editAdvartismentExpire" type="date" maxlength="250" value="{{ formData.editAdvartismentExpire }}"><br><br>
+                        <button class="btn btn-primary" ng-click="updateAdvartisment()">Update Advartisment</button>
+                        <button class="btn btn-danger" ng-click="clearAdvartisment()">Clear Advartisment</button>
+                    </fieldset>
+                </form>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+</div>

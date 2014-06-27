@@ -1,7 +1,7 @@
 @CreateEmployerCtrl = ($scope, $location, employerData, $translate) ->
- $translate.use('ba')
- $scope.changeLanguage  = (key) ->
-  $translate.use(key)
+  $translate.use('ba')
+  $scope.changeLanguage  = (key) ->
+   $translate.use(key)
   $scope.data = employerData.data
   employerData.loadEmployers(null)
 
@@ -11,6 +11,7 @@
     newEmoployerName:''
     newEmployerLocation:''
     newEmployerWebsite:''
+    newEmployerProvjera: ''
 
 
   $scope.navNewEmployer = ->
@@ -20,8 +21,8 @@
     $location.url('/')
 
   $scope.createEmployer = ->
-    employerData.createEmployer($scope.formData)
-    $location.url('/')
+    employerData.createEmployer($scope.formData,$location)
+
 
   $scope.clearEmployer = ->
     $scope.formData.newEmployerEmail = ''
