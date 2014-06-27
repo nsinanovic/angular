@@ -74,11 +74,8 @@
         <hr>
         <div class="panel panel-default">
             <div class="panel-heading">{{'NOTIFICATION' | translate}}</div>
-            <div class="panel-body">
-                Ekonomija
-            </div>
-            <div class="panel-body">
-                Bankarstvo
+            <div class="panel-body" ng-repeat="not in data2.notifications | filter:{ user_id: data.userId}">
+                {{not.kategorija}}
             </div>
         </div>
         <hr>
@@ -86,11 +83,15 @@
             <ul class="list-group">
                 <li class="list-group-item">
                     <span class="badge">>></span>
-                   <a href="/cv/new">{{'NEWCV' | translate}}</a>
+                   <a href="/#/cv/new">{{'NEWCV' | translate}}</a>
                 </li>
                 <li class="list-group-item">
                     <span class="badge">>></span>
-                    <a href="/user/edit">{{'EDITUSER' | translate}}</a>
+                    <a  ng-click="editUser(user_id)">{{'EDITUSER' | translate}}</a>
+                </li>
+                <li class="list-group-item">
+                    <span class="badge">>></span>
+                    <a href="/#/notification/new">Odaberi kategoriju</a>
                 </li>
 
             </ul>
@@ -100,7 +101,7 @@
             <div class="list-group" ng-repeat="cv in data1.cvs | filter:{ user_id: data.userId}">
                 <a href="#" class="list-group-item">
                     <h4 class="list-group-item-heading">{{cv.naslov}}</h4>
-                    <p class="list-group-item-text">  {{data.userId}} </p>
+                    <p class="list-group-item-text">  {{user_id}} </p>
 
 
                 </a>

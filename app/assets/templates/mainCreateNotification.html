@@ -1,0 +1,78 @@
+<div class="row" >
+
+    <div class="col-lg-8">
+
+        <h2>Berza poslova <small>beta version 1.1</small></h2>
+    </div>
+    <div class="col-lg-4">
+        <div style="text-align: right">
+            <a ng-click="changeLanguage('ba')" data-no-turbolink="true">BS </a> ||
+            <a ng-click="changeLanguage('en')" data-no-turbolink="true">EN</a>
+        </div>
+        <div class="breadcrumb">
+            <form role="form">
+                <div class="form-group input-group">
+
+                    <input type="text" class="form-control"  ng-model="searchText">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" disabled="disabled">{{'SEARCH' | translate}}</button>
+                </span>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<hr>
+
+        <script language="javascript" type="text/javascript">
+            function funkcija() {
+                var y = document.getElementById("odabrano");
+                var t = y.options[y.selectedIndex].value;
+
+
+                var x = document.getElementById("kategorija");
+                x.value = t;
+
+
+            }
+
+        </script>
+
+<div class="row">
+    <div class="col-lg-4">
+        <form>
+        <fieldset>
+        <div class="form-group">
+            <label>Odaberi kategoriju</label>
+
+            <select  class="form-control" id="odabrano" onchange="funkcija()">
+                    <option ng-repeat="kategorija in data1.kategorijas"  >{{kategorija.title}}</option>
+            </select>
+        </div>
+        <input ng-model="formData.newKategorija" id="kategorija"  >
+            <button class="btn btn-primary" ng-click="createNotification()">Create</button>
+        </fieldset>
+        </form>
+
+    </div>
+    <div class="col-lg-4">
+
+
+
+
+
+    </div>
+    <div class="col-lg-4">
+
+
+
+
+
+    </div>
+
+
+</div>

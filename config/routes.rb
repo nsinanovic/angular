@@ -1,6 +1,8 @@
 Blog::Application.routes.draw do
 
 
+  resources :notifications
+
   resources :locations
 
   resources :employers

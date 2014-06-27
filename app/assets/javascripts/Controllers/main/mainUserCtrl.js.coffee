@@ -1,4 +1,4 @@
-@UserCtrl = ($scope, $routeParams, $location, $q, userData, cvData, $translate) ->
+@UserCtrl = ($scope, $routeParams, $location, $q, userData, cvData,notificationData,kategorijaData,$translate) ->
   $translate.use('ba')
 
   $scope.changeLanguage  = (key) ->
@@ -7,6 +7,12 @@
 
   $scope.data1 = cvData.data
   cvData.loadCvs(null)
+
+  $scope.data2 = notificationData.data
+  notificationData.loadNotifications(null)
+
+  $scope.data3 = kategorijaData.data
+  kategorijaData.loadKategorijas(null)
 
   $scope.data =
     userData: userData.data
@@ -23,6 +29,9 @@
 
   $scope.navNewUser = ->
     $location.url('/user/new')
+
+  $scope.editUser = (userId) ->
+    $location.url('/user/edit/'+userId)
 
   $scope.navHome = ->
     $location.url('/')
@@ -47,4 +56,4 @@
   userData.loadUsers(@deferred)
 
 
-@UserCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'userData', 'cvData','$translate']
+@UserCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'userData', 'cvData', 'notificationData','kategorijaData','$translate']

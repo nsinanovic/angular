@@ -21,6 +21,9 @@
   $scope.navHome = ->
     $location.url('/')
 
+  $scope.editUser = (userId) ->
+    $location.url('/user/edit/'+userId)
+
   $scope.updateUser = ->
     userData.editUser($scope.formData)
     $location.url('/')
