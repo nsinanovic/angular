@@ -1,0 +1,76 @@
+<div class="row" >
+
+    <div class="col-lg-8">
+
+        <h2>Berza poslova <small>beta version 1.1</small></h2>
+    </div>
+    <div class="col-lg-4">
+        <div style="text-align: right">
+            <a ng-click="changeLanguage('ba')" data-no-turbolink="true">BS </a> ||
+            <a ng-click="changeLanguage('en')" data-no-turbolink="true">EN</a>
+        </div>
+        <div class="breadcrumb">
+            <form role="form">
+                <div class="form-group input-group">
+
+                    <input type="text" class="form-control"  ng-model="searchText">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" disabled="disabled">{{'SEARCH' | translate}}</button>
+                </span>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<hr>
+
+
+<div class="row">
+
+    <div class="col-lg-8">
+        <span class="avatar"><img src="http://placehold.it/200x200"></span>
+
+
+        <div class="page-header">
+            <h1 id="container">Informacije o korisniku </h1>
+        </div>
+        <div class="bs-example">
+            <div class="jumbotron">
+                <h3 >Update user</h3>
+                <form>
+                    <fieldset>
+                        <label><strong>Name</strong></label>
+                        <input class="form-control" ng-model="formData.editEmployerName" type="text" maxlength="250" value="{{ formData.editEmployerName }}"><br>
+                        <label><strong>Email</strong></label>
+                        <input class="form-control" ng-model="formData.editEmployerEmail" type="text" maxlength="250" value="{{ formData.editEmployerEmail }}"><br>
+                        <label><strong>Password</strong></label>
+                        <input class="form-control" ng-model="formData.editEmployerPassword" type="text" maxlength="250" value="{{ formData.editEmployerPassword }}"><br>
+                        <label><strong>Location</strong></label>
+                        <input class="form-control" ng-model="formData.editEmployerLocation" type="text" maxlength="250" value="{{ formData.editEmployerLocation }}"><br>
+                        <label><strong>Website</strong></label>
+                        <input class="form-control" ng-model="formData.editEmployerWebsite" type="text" maxlength="250" value="{{ formData.editEmployerWebsite }}"><br><br>
+                        <button class="btn btn-primary" ng-click="updateEmployer()">Update Employer</button>
+                        <button class="btn btn-danger" ng-click="clearUser()">Clear Employer</button>
+                    </fieldset>
+                </form>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+    
+
+
+
+</div>

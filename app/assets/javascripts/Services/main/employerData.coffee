@@ -23,7 +23,34 @@ angular.module('Blog').factory('employerData', ['$http', ($http) ->
         deferred.resolve()
 
 
+  employerData.editEmployer = (updateEmployer) ->
+    #cl ent-side validations
+    if updateEmployer.editEmployerEmail == '' or updateEmployer.editEmployerPassword == ''
+      alert('Neither the Title nor the Body are allowed to be left blank.')
+      return false
 
+    #create data object to post
+    data =
+      edit_employer:
+        id: updateEmployer.editEmployerId
+        password: updateEmployer.editEmployerPassword
+        email: updateEmployer.editEmployerEmail
+        name: updateEmployer.editEmployerName
+        location: updateEmployer.editEmployerLocation
+        website: updateEmployer.editEmployerWebsite
+
+    # Do POST request to /posts.json
+    $http.post('./employers.json', data).success( (data) ->
+
+      # Add new post to array of posts
+      employerData.data.employers.push(data)
+      console.log('Successfully updated employer.')
+
+    ).error( ->
+      console.error('Failed to update new employer.')
+    )
+    return true
+  
   employerData.createEmployer = (newEmployer,location) ->
     # Client-side data validation
     if newEmployer.newEmployerEmail == '' or newEmployer.newEmployerPassword == '' or newEmployer.newEmployerName == '' or newEmployer.newEmployerLocation == ''
