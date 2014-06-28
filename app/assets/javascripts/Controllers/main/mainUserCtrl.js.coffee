@@ -47,6 +47,7 @@
     $scope.data.currentUser.address = user.address
     $scope.data.currentUser.username = user.username
     $scope.data.currentUser.name = user.name
+    $scope.data.currentUser.id = user.id
 
   # Create promise to be resolved after posts load
   @deferred = $q.defer()

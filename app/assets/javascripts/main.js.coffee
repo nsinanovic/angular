@@ -128,7 +128,7 @@ Blog.config(['$routeProvider', ($routeProvider) ->
   $routeProvider
   .when('/post/new', { templateUrl: '../assets/mainCreatePost.html', controller: 'CreatePostCtrl' } )
   .when('/post/:postId', { templateUrl: '../assets/mainPost.html', controller: 'PostCtrl' } )
-  .when('/notification/new', { templateUrl: '../assets/mainCreateNotification.html', controller: 'CreateNotificationCtrl' } )
+  .when('/notification/new/:userId', { templateUrl: '../assets/mainCreateNotification.html', controller: 'CreateNotificationCtrl' } )
   .when('/notification/:notificationId', { templateUrl: '../assets/mainNotification.html', controller: 'NotificationCtrl' } )
   .when('/cv/new', { templateUrl: '../assets/mainCreateCv.html', controller: 'CreateCvCtrl' } )
   .when('/kategorija/new', { templateUrl: '../assets/mainCreateKatgeorija.html', controller: 'CreateKategorijaCtrl' } )

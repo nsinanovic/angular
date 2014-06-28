@@ -1,4 +1,4 @@
-@CreateNotificationCtrl = ($scope, $location, notificationData, kategorijaData, userData, advartismentData) ->
+@CreateNotificationCtrl = ($scope, $location, $routeParams, notificationData, kategorijaData, userData, advartismentData) ->
 
   $scope.data = notificationData.data
   notificationData.loadNotifications(null)
@@ -53,8 +53,11 @@
   $scope.data1 = kategorijaData.data
   kategorijaData.loadKategorijas(null)
 
+
   $scope.data2 = userData.data
   userData.loadUsers(null)
+
+  $scope.data2.userId = $routeParams.userId
 
   $scope.data3 = advartismentData.data
   advartismentData.loadAdvartisments(null)
@@ -75,4 +78,4 @@
 
 
 
-@CreateNotificationCtrl.$inject = ['$scope',  '$location', 'notificationData', 'kategorijaData', 'userData', 'advartismentData']
+@CreateNotificationCtrl.$inject = ['$scope',  '$location', '$routeParams','notificationData', 'kategorijaData', 'userData', 'advartismentData']

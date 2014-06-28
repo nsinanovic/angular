@@ -4,6 +4,7 @@
   $scope.changeLanguage  = (key) ->
     $translate.use(key)
 
+
   d=new Date()
   m= d.getMonth()+1
   y= d.getFullYear()
@@ -22,6 +23,7 @@
       days: ''
 
   $scope.data.advartismentId = $routeParams.advartismentId
+
 
   $scope.data1 = advartismentData.data
   advartismentData.loadAdvartisments(null)

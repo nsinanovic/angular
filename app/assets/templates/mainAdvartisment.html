@@ -79,7 +79,7 @@
             <ul class="breadcrumb" ng-repeat="employer in data2.employers | filter:data.currentAdvartisment.employer">
                 <li class="active" >
                     Web page: {{employer.website}}
-                    <button type="button" class="btn btn-primary btn-xs">Posjeti stranicu</button>
+                    <button type="button" ><a href="http://{{employer.website}}" target="_blank">Posjeti stranicu</a></button>
                 </li>
             </ul>
             <ul class="breadcrumb">

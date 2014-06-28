@@ -59,17 +59,16 @@
         </form><br><br>
         <div class="panel panel-default">
             <div class="panel-heading">Moje kategorije</div>
-            <div class="panel-body" ng-repeat="not in data.notifications">
-                {{not.kategorija}} {{not.user_id}} {{user_id}}
+            <div class="panel-body" ng-repeat="not in data.notifications | filter: {user_id:data2.userId}">
+                {{not.kategorija}}
             </div>
         </div>
 
     </div>
     <div class="col-lg-8">
+        <div ng-repeat="not in data.notifications | filter: {user_id:data2.userId}">
 
-        <div class="col-lg-6"  ng-repeat="advartisment in data3.advartisments">
-
-
+        <div class="col-lg-6"  ng-repeat="advartisment in data3.advartisments | filter: {category:not.kategorija}">
 
             {{advartisment.expire}}<br>
             {{advartisment.title}} - {{advartisment.location}}<br>
@@ -78,6 +77,7 @@
             <hr>
 
         </div>
+            </div>
     </div>
 
 
