@@ -48,30 +48,33 @@
         <fieldset>
         <div class="form-group">
             <label>Odaberi kategoriju</label>
+            <select class="form-control" ng-model="formData.newKategorija"
+                    ng-options="kategorija.kategorija for kategorija in kategorijas"></select>
 
-            <select  class="form-control" id="odabrano" onchange="funkcija()">
-                    <option ng-repeat="kategorija in data1.kategorijas"  >{{kategorija.title}}</option>
-            </select>
+
         </div>
-        <input ng-model="formData.newKategorija" id="kategorija"  >
+
             <button class="btn btn-primary" ng-click="createNotification()">Create</button>
         </fieldset>
-        </form>
+        </form><br><br>
+        <div class="panel panel-default">
+            <div class="panel-heading">Moje kategorije</div>
+            <div class="panel-body" ng-repeat="not in data.notifications">
+                {{not.kategorija}} {{not.user_id}} {{user_id}}
+            </div>
+        </div>
 
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-8">
+        <div class="col-lg-6"  ng-repeat="advartisment in data3.advartisments">
 
 
 
+            {{advartisment.expire}} - {{advartisment.title}} - {{advartisment.location}}<br>
+            <a ng-click="viewAdvartisment(advartisment.id)">detaljno</a>
+            <hr>
 
-
-    </div>
-    <div class="col-lg-4">
-
-
-
-
-
+        </div>
     </div>
 
 

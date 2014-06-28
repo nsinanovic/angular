@@ -31,7 +31,7 @@ angular.module('Blog').factory('notificationData', ['$http', ($http) ->
     data =
       new_notification:
 
-        kategorija: newNotification.newKategorija
+        kategorija: newNotification.newKategorija.kategorija
 
     # Do POST request to /posts.json
     $http.post('./notifications.json', data).success( (data) ->

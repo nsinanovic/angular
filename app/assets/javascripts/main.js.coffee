@@ -192,8 +192,9 @@ Blog.config(['$routeProvider', ($routeProvider) ->
   .when('/advartismentlokacija/mostar',{ templateUrl: '../assets/mainMostar.html', controller: 'IndexCtrl' })
   .when('/advartismentlokacija/bihac',{ templateUrl: '../assets/mainBihac.html', controller: 'IndexCtrl' })
   .when('/advartismentlokacija/brcko',{ templateUrl: '../assets/mainBrcko.html', controller: 'IndexCtrl' })
-  .when('/main/about',{ templateUrl: '../assets/about.html', controller: 'IndexCtrl' })
-  .when('/main/contact',{ templateUrl: '../assets/contact.html', controller: 'IndexCtrl' })
+  .when('/about',{ templateUrl: '../assets/about.html', controller: 'IndexCtrl' })
+  .when('/contact',{ templateUrl: '../assets/contact.html', controller: 'IndexCtrl' })
+
 
 
 
