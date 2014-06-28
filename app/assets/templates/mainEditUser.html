@@ -87,12 +87,9 @@
         </div>
         <hr>
         <div class="panel panel-default">
-            <div class="panel-heading">Kategorije za koje dobijam notifikacije</div>
-            <div class="panel-body">
-                Ekonomija
-            </div>
-            <div class="panel-body">
-                Bankarstvo
+            <div class="panel-heading">{{'NOTIFICATION' | translate}}</div>
+            <div class="panel-body" ng-repeat="not in data2.notifications | filter:{ user_id: data.userId}">
+                {{not.kategorija}}
             </div>
         </div>
         <hr>
@@ -100,7 +97,7 @@
             <ul class="list-group">
                 <li class="list-group-item">
                     <span class="badge">>></span>
-                    Kreiraj novi cv
+                    <a href="/#/cv/new">{{ 'NEWCV' | translate }} </a>
                 </li>
                 <li class="list-group-item">
                     <span class="badge">>></span>
@@ -111,17 +108,13 @@
         </div>
         <hr>
         <div class="bs-example">
-            <div class="list-group">
+            <div class="list-group" ng-repeat="cv in data.cvs | filter:{ user_id: data.userId}">
                 <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">Još jedan cv</h4>
-                    <p class="list-group-item-text"> Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-
+                    <h4 class="list-group-item-heading">{{cv.naslov}}</h4>
+                    <p class="list-group-item-text">  {{user_id}} </p>
 
                 </a>
-                <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">Još jedan cv</h4>
-                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                </a>
+
             </div>
         </div>
 

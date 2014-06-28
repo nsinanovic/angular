@@ -1,4 +1,17 @@
-@EditUserCtrl = ($scope, $routeParams, $location, userData) ->
+@EditUserCtrl = ($scope, $routeParams, $location, userData, cvData, notificationData, kategorijaData, $translate) ->
+
+  $translate.use('ba')
+  $scope.changeLanguage  = (key) ->
+    $translate.use(key)
+
+  $scope.data1 = cvData.data
+  cvData.loadCvs(null)
+
+  $scope.data2 = notificationData.data
+  notificationData.loadNotifications(null)
+
+  $scope.data3 = kategorijaData.data
+  kategorijaData.loadKategorijas(null)
 
   $scope.data = userData.data
   $scope.data.userId = $routeParams.userId
@@ -41,5 +54,5 @@
 
 
 
-@EditUserCtrl.$inject = ['$scope', '$routeParams','$location', 'userData']
+@EditUserCtrl.$inject = ['$scope', '$routeParams','$location', 'userData','cvData', 'notificationData', 'kategorijaData', '$translate']
 

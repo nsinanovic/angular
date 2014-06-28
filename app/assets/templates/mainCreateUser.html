@@ -1,3 +1,6 @@
+<style>
+    body     { padding-top:30px; }
+</style>
 <div class="row" >
 
     <div class="col-lg-8">
@@ -10,7 +13,7 @@
             <a ng-click="changeLanguage('en')" data-no-turbolink="true">EN</a>
         </div>
         <div class="breadcrumb">
-            <form role="form">
+            <form role="form" >
                 <div class="form-group input-group">
 
                     <input type="text" class="form-control"  ng-model="searchText">
@@ -29,11 +32,11 @@
 <hr>
         <div class="row">
 <div class="col-lg-4" >
-    <form>
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
         <fieldset>
-            <div class="form-group">
-                <label> {{'FIRSTNAME' | translate}}</label>
-                <input class="form-control" ng-model="formData.newUserName" placeholder="First name" maxlength="250" minlength = "3">
+            <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">                <label> {{'FIRSTNAME' | translate}}</label>
+                <input class="form-control" name="name" ng-model="formData.newUserName" placeholder="First name" maxlength="250" minlength = "3">
+                <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
             </div>
             <div class="form-group">
                 <label>{{'LASTNAME' | translate}}</label>

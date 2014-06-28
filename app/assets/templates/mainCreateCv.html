@@ -35,18 +35,25 @@
             <div class="panel-heading">{{ 'NEWCV' | translate }}</div>
 
 <div class="container" style="margin-top: 40px;" >
-  <form  style="align-content: center">
+  <form  style="align-content: center" name="cv_submit_form">
     <fieldset>
         <div class="row" >
-            <div class="col-lg-8">
+            <div class="col-lg-8" ng-class="{ 'has-error' : title_invalid(cv_submit_form) }">
                 <label><strong> {{ 'TITLE' | translate }}</strong></label> <br>
-                <textarea  style="height: 50px; width:670px"  ng-model="formData.newCvNaslov" placeholder=""></textarea>    <hr>
+                <textarea  style="height: 50px; width:670px"  ng-model="formData.newCvNaslov" placeholder="" name="title" required autofocus ng-minlength="6" ng-maxlength="255"></textarea>    <hr>
+
+            <span class="help-block" ng-show="title_invalid(cv_submit_form)">
+                    Title title must be at least 6 characters long (maximum of 255).
+                </span>
             </div>
         </div>
         <div class="row" >
-            <div class="col-lg-8">
+            <div class="col-lg-8" ng-class="{ 'has-error' : education_invalid(cv_submit_form) }">
                 <label><strong> {{ 'EDUCATION' | translate }}</strong></label> <br>
-                <textarea  style="height: 50px; width:670px"  ng-model="formData.newCvObrazovanje" placeholder=""></textarea>    <hr>
+                <textarea  style="height: 50px; width:670px"  ng-model="formData.newCvObrazovanje" name="education" placeholder=""  required autofocus ng-minlength="6" ng-maxlength="255"></textarea>    <hr>
+            <span class="help-block" ng-show="education_invalid(cv_submit_form)">
+                    Education  must be at least 6 characters long (maximum of 255).
+                </span>
             </div>
         </div>
         <div class="row" >
@@ -85,7 +92,7 @@
         </div>
 
 
-        <button class="btn btn-primary" ng-click="createCv()">{{ 'CREATE' | translate }}</button>
+        <button class="btn btn-primary" ng-click="createCv()" ng-disabled="cv_submit_form.$invalid">{{ 'CREATE' | translate }}</button>
         <button class="btn btn-default" ng-click="clearCv()">{{ 'CLEAR' | translate }}</button>
 
     </fieldset>
@@ -98,24 +105,23 @@
         <div class="bs-example">
             <ul class="list-group">
                 <li class="list-group-item">
-                    <span class="badge">14.12.2011.</span>
+                    <span class="badge">
+                   28.6.2014
+                    </span>
                     Datum kreiranja cv-a
                 </li>
 
                 <li class="list-group-item">
-                    <span class="badge">5</span>
+                    <span class="badge">{{data.cvs.length}}</span>
                     Broj mojih cv-a
                 </li>
             </ul>
         </div>
         <hr>
         <div class="panel panel-default">
-            <div class="panel-heading">{{ 'NOTIFICATION' | translate }}</div>
-            <div class="panel-body">
-                Ekonomija
-            </div>
-            <div class="panel-body">
-                Bankarstvo
+            <div class="panel-heading">{{'NOTIFICATION' | translate}}</div>
+            <div class="panel-body" ng-repeat="not in data2.notifications | filter:{ user_id: data.userId}">
+                {{not.kategorija}}
             </div>
         </div>
         <hr>
@@ -125,29 +131,17 @@
                     <span class="badge">>></span>
                      <a href="/#/cv/new">{{ 'NEWCV' | translate }} </a>
                 </li>
-                <li class="list-group-item">
-                    <span class="badge">>></span>
-                    <a href="/#/cv/save">{{ 'PRINTCV' | translate }} </a>
-                </li>
-                <li class="list-group-item">
-                      <span class="badge">>></span>
-                    <a href="/#/cv/print">{{ 'SAVECV' | translate }} </a>
-                </li>
             </ul>
         </div>
         <hr>
         <div class="bs-example">
-            <div class="list-group">
+            <div class="list-group" ng-repeat="cv in data.cvs | filter:{ user_id: data.userId}">
                 <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">CV</h4>
-                    <p class="list-group-item-text"> Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-
+                    <h4 class="list-group-item-heading">{{cv.naslov}}</h4>
+                    <p class="list-group-item-text">  {{user_id}} </p>
 
                 </a>
-                <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">CV</h4>
-                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                </a>
+
             </div>
         </div>
 
