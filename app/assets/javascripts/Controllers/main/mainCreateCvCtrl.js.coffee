@@ -8,12 +8,17 @@
   $scope.data = cvData.data
   cvData.loadCvs(null)
 
+
   $scope.data2 = notificationData.data
   notificationData.loadNotifications(null)
 
   $scope.data3 = kategorijaData.data
   kategorijaData.loadKategorijas(null)
 
+  d=new Date()
+  m= d.getMonth()+1
+  y= d.getFullYear()
+  $scope.datum = y+'-'+m+'-'+d.getDate()
 
   $scope.formData =
     newCvNaslov: ''
@@ -36,4 +41,4 @@
 
 
 
-@CreateCvCtrl.$inject = ['$scope', '$location', 'cvData', 'notificationData', 'kategorijaData', '$translate']
+@CreateCvCtrl.$inject = ['$scope', '$location','cvData', 'notificationData', 'kategorijaData', '$translate']

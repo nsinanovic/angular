@@ -31,13 +31,12 @@
             <div class="form-group" ng-class="{ 'has-error' : name_invalid(employerForm) }">
                 <label>{{ 'FIRST' | translate }} </label>
                 <input class="form-control" name="name" ng-model="formData.newEmployerName" placeholder="" required autofocus ng-minlength="3" ng-maxlength="255">
-                <p ng-show="userForm.name.$invalid" class="help-block">Unos naziva firme je obavezan. Minimalna duzina je 3 kataktera. </p>
-
+                <small ng-show="employerForm.name.$invalid" class="help-block">Unos naziva firme je obavezan. Minimalna duzina je 3 kataktera. </small>
             </div>
-            <div class="form-group" ng-class="{ 'has-error' : email_invalid(employerForm) }">
+            <div class="form-group" ng-class="{ 'has-error' : email_invalid(employerForm)}">
                 <label>{{ 'EMAIL' | translate }} </label>
                 <input name="email" class="form-control" ng-model="formData.newEmployerEmail" ng-pattern=" /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/" placeholder="" required autofocus maxlength="250" minlength = "3">
-                <p ng-show="userForm.email.$invalid" class="help-block">Unos email-a u ispravnom formatu je obavezan.</p>
+                <small ng-show="employerForm.email.$invalid" class="help-block"> Unos email-a u ispravnom formatu je obavezan.</small>
             </div>
             <div class="form-group">
                 <label>{{ 'PW' | translate }} </label>
@@ -51,7 +50,7 @@
             <div class="form-group" ng-class="{ 'has-error' : location_invalid(employerForm) }">
                 <label>{{ 'LOCATION' | translate }} </label>
                 <input class="form-control" name="location" ng-model="formData.newEmployerLocation" placeholder="Location"  required autofocus maxlength="250" minlength = "3">
-                <p ng-show="userForm.location.$invalid" class="help-block">Unos lokacije firme je obavezan.</p>
+                <small ng-show="employerForm.location.$invalid" class="help-block">Unos lokacije firme je obavezan.</small>
             </div>
             <div class="form-group">
                 <label>{{ 'WEBSITE' | translate }} </label>
@@ -66,4 +65,4 @@
     </form>
 
 </div>
-        </div>
+</div>
