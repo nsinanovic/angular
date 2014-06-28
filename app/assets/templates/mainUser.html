@@ -58,14 +58,11 @@
         <div class="bs-example">
             <ul class="list-group">
                 <li class="list-group-item">
-                    <span class="badge">  {{data.currentUser.username}}</span>
-                    Datum registrovanja korisnika
+                    <span class="badge">  {{data.currentUser.created_at}}</span>
+                    Datum registracije
                 </li>
 
-                <li class="list-group-item">
-                    <span class="badge">5</span>
-                    Broj mojih cv-a
-                </li>
+
             </ul>
         </div>
         <hr>
@@ -82,10 +79,7 @@
                     <span class="badge">>></span>
                    <a href="/#/cv/new">{{'NEWCV' | translate}}</a>
                 </li>
-                <li class="list-group-item">
-                    <span class="badge">>></span>
-                    <a  ng-click="editUser(user_id)">{{'EDITUSER' | translate}}</a>
-                </li>
+
                 <li class="list-group-item">
                     <span class="badge">>></span>
                     <a href="/#/notification/new/{{data.currentUser.id}}">Odaberi kategoriju</a>
@@ -98,7 +92,7 @@
             <div class="list-group" ng-repeat="cv in data1.cvs | filter:{ user_id: data.userId}">
                 <a href="#" class="list-group-item">
                     <h4 class="list-group-item-heading">{{cv.naslov}}</h4>
-                    <p class="list-group-item-text">  {{user_id}} </p>
+                    <p class="list-group-item-text"> MOJ CV </p>
 
 
                 </a>
