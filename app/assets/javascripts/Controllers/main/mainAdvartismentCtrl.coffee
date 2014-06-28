@@ -1,4 +1,4 @@
-@AdvartismentCtrl = ($scope, $routeParams, $location, $q, advartismentData, $translate) ->
+@AdvartismentCtrl = ($scope, $routeParams, $location, $q, advartismentData, employerData, $translate) ->
   $translate.use('ba')
 
   $scope.changeLanguage  = (key) ->
@@ -23,11 +23,20 @@
 
   $scope.data.advartismentId = $routeParams.advartismentId
 
+  $scope.data1 = advartismentData.data
+  advartismentData.loadAdvartisments(null)
+
+  $scope.data2 = employerData.data
+  employerData.loadEmployers(null)
+
   $scope.navNewAdvartisment = ->
     $location.url('/advartisment/new')
 
   $scope.navHome = ->
     $location.url('/')
+
+  $scope.viewAdvartisment = (advartismentId) ->
+    $location.url('/advartisment/'+advartismentId)
 
   # This will be run once the loadPosts successfully completes (or immediately
   # if data is already loaded)
@@ -39,7 +48,8 @@
     $scope.data.currentAdvartisment.category = advartisment.category
     $scope.data.currentAdvartisment.employer = advartisment.employer
     $scope.data.currentAdvartisment.expire = advartisment.expire
-    $scope.data.currentAdvartisment.days = advartisment.expire
+    $scope.data.currentAdvartisment.days = advartisment.published
+
 
   # Create promise to be resolved after posts load
   @deferred = $q.defer()
@@ -49,4 +59,4 @@
   advartismentData.loadAdvartisments(@deferred)
 
 
-@AdvartismentCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'advartismentData', '$translate']
+@AdvartismentCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'advartismentData', 'employerData','$translate']

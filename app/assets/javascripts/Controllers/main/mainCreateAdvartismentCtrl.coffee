@@ -1,7 +1,7 @@
 @CreateAdvartismentCtrl = ($scope, $location, advartismentData, $translate) ->
- $translate.use('ba')
- $scope.changeLanguage  = (key) ->
-  $translate.use(key)
+  $translate.use('ba')
+  $scope.changeLanguage  = (key) ->
+   $translate.use(key)
   $scope.data = advartismentData.data
   advartismentData.loadAdvartisments(null)
 
@@ -43,6 +43,11 @@
     {name:'Zanatske usluge'}
   ];
 
+  d=new Date()
+  m= d.getMonth()+1
+  y= d.getFullYear()
+  $scope.datum = y+'-'+m+'-'+d.getDate()
+
   $scope.formData =
     newAdvartismentTitle: ''
     newAdvartismentDescription: ''
@@ -57,7 +62,7 @@
     $location.url('/')
 
   $scope.createAdvartisment = ->
-    advartismentData.createAdvartisment($scope.formData)
+    advartismentData.createAdvartisment($scope.formData,$scope.datum)
 
   $scope.clearAdvartisment = ->
     $scope.formData.newAdvartismentTitle = ''

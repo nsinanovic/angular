@@ -32,7 +32,7 @@
 
     <div class="col-lg-8">
         <span class="avatar"><img src="http://placehold.it/200x100"></span>
-        <span >Atlant BiH je jkndf jnfdisn jkhsfdik jhbsdiuf jbnsduifnk ... read more</span>
+
 
             <div class="page-header">
                 <h1 id="container">{{data.currentAdvartisment.employer}}</h1>
@@ -41,7 +41,7 @@
                 <div class="jumbotron">
                     <h2>{{data.currentAdvartisment.title}}</h2>
                     <h6>{{data.currentAdvartisment.description}}</h6>
-                    <p><a class="btn btn-primary btn-lg">Prijavi se</a></p>
+
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
             <div class="bs-example">
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <span class="badge">{{datum}}</span>
+                        <span class="badge">{{data.currentAdvartisment.days}}</span>
                         Datum objavljivanja oglasa
                     </li>
                     <li class="list-group-item">
@@ -65,8 +65,8 @@
                         Datum isteka oglasa
                     </li>
                     <li class="list-group-item">
-                        <span class="badge">{{data.currentAdvartisment.days}}</span>
-                        Dana do isteka oglasa
+                        <span class="badge">{{datum}}</span>
+                        Današnji datum
                     </li>
                 </ul>
             </div>
@@ -74,31 +74,26 @@
             <ul class="breadcrumb">
                 <li class="active">
                     Kategorija: {{data.currentAdvartisment.category}}
-                    <button type="button" class="btn btn-primary btn-xs">Prati kategoriju</button>
                 </li>
             </ul>
-            <ul class="breadcrumb">
-                <li class="active">
-                    Web page: www.atlant.ba
+            <ul class="breadcrumb" ng-repeat="employer in data2.employers | filter:data.currentAdvartisment.employer">
+                <li class="active" >
+                    Web page: {{employer.website}}
                     <button type="button" class="btn btn-primary btn-xs">Posjeti stranicu</button>
                 </li>
             </ul>
             <ul class="breadcrumb">
                 <li class="active">
                     Lokacija: {{data.currentAdvartisment.location}}
-                    <button type="button" class="btn btn-primary btn-xs">Ostali oglasi</button>
                 </li>
             </ul>
 <hr>
                 <div class="bs-example">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">List group item heading</h4>
-                            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">List group item heading</h4>
-                            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <h3>Ostali oglasi od {{data.currentAdvartisment.employer}}</h3>
+                    <div class="list-group"  ng-repeat="adv in data1.advartisments | filter: data.currentAdvartisment.employer" >
+                        <a ng-click="viewAdvartisment(adv.id)" class="list-group-item" >
+                            <h4 class="list-group-item-heading">{{adv.title}}</h4>
+                            <p class="list-group-item-text" >Pogledajte ovaj oglas</p>
                         </a>
                     </div>
                 </div>

@@ -55,7 +55,7 @@ angular.module('Blog').factory('advartismentData', ['$http', ($http) ->
 
 
 
-  advartismentData.createAdvartisment = (newAdvartisment) ->
+  advartismentData.createAdvartisment = (newAdvartisment,datum) ->
     # Client-side data validation
     if newAdvartisment.newAdvartismentTitle == '' or newAdvartisment.newAdvartismentDescription == ''
       alert('Neither the email nor the password are allowed to be left blank.')
@@ -69,6 +69,7 @@ angular.module('Blog').factory('advartismentData', ['$http', ($http) ->
         location: newAdvartisment.newAdvartismentLocation
         category: newAdvartisment.newAdvartismentCategory.name
         expire: newAdvartisment.newAdvartismentExpire
+        published: datum
 
     # Do POST request to /posts.json
     $http.post('./advartisments.json', data).success( (data) ->
