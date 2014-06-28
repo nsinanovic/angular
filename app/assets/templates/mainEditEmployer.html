@@ -50,8 +50,7 @@
                         <input class="form-control" ng-model="formData.editEmployerLocation" type="text" maxlength="250" value="{{ formData.editEmployerLocation }}"><br>
                         <label><strong>Website</strong></label>
                         <input class="form-control" ng-model="formData.editEmployerWebsite" type="text" maxlength="250" value="{{ formData.editEmployerWebsite }}"><br><br>
-                        <button class="btn btn-primary" ng-click="updateEmployer()">Update Employer</button>
-                        <button class="btn btn-danger" ng-click="clearUser()">Clear Employer</button>
+                        <button class="btn btn-primary" ng-click="updateEmployer()">{{'EDIT' | translate}}</button>
                     </fieldset>
                 </form>
 
@@ -67,7 +66,38 @@
     </div>
 
 
+    <div class="col-lg-4">
+        <div class="bs-example">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="badge" >  {{formData.editEmployerDate}}</span>
+                    Datum registracije
+                </li>
 
+
+            </ul>
+        </div>
+        <hr>
+
+
+        <div class="bs-example">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="badge">>></span>
+                    <a href="/#/advartisment/new"> New advartisment</a>
+                </li>
+                <li class="list-group-item">
+                    <span class="badge">>></span>
+                    <a href="/#/employer/edit/{{data.currentEmployer.id}}"> Edit profile</a>
+                </li>
+                <li class="list-group-item">
+                    <span class="badge">>></span>
+                    <a href="/#/myadvartisment/{{data.currentEmployer.name}}"> Moji oglasi</a>
+                </li>
+
+            </ul>
+        </div>
+        <hr>
 
 
 </div>

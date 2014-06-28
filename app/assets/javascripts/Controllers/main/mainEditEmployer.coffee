@@ -1,4 +1,5 @@
-@EditEmployerCtrl = ($scope, $routeParams, $location, employerData) ->
+@EditEmployerCtrl = ($scope, $routeParams, $location, employerData, $translate) ->
+  $translate.use('ba')
 
   $scope.data = employerData.data
   $scope.data.employerId = $routeParams.employerId
@@ -13,6 +14,7 @@
     editEmployerWebsite: employer.website
     editEmployerEmail: employer.email
     editEmployerId: employer.id
+    editEmployerDate: employer.created_at
 
   $scope.navNewEmployer = ->
     $location.url('/employer/new')
@@ -39,5 +41,5 @@
 
 
 
-@EditEmployerCtrl.$inject = ['$scope', '$routeParams','$location', 'employerData']
+@EditEmployerCtrl.$inject = ['$scope', '$routeParams','$location', 'employerData', '$translate']
 

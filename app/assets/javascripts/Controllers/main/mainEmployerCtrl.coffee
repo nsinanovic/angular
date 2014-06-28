@@ -39,6 +39,7 @@
     $scope.data.currentEmployer.location = employer.location
     $scope.data.currentEmployer.website = employer.website
     $scope.data.currentEmployer.created_at = employer.created_at
+    $scope.data.currentEmployer.id=employer.id
 
   # Create promise to be resolved after posts load
   @deferred = $q.defer()
