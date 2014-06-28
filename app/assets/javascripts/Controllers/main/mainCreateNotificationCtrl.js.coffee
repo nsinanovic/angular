@@ -59,6 +59,9 @@
   $scope.data3 = advartismentData.data
   advartismentData.loadAdvartisments(null)
 
+  $scope.viewAdvartisment = (advartismentId) ->
+    $location.url('/advartisment/'+advartismentId)
+
 
   $scope.navHome = ->
     $location.url('/')

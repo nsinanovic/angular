@@ -66,12 +66,15 @@
 
     </div>
     <div class="col-lg-8">
-        <div class="col-lg-6"  ng-repeat="advartisment in data3.advartisments">
+
+        <div class="col-lg-6"  ng-repeat="advartisment in data3.advartisments}">
 
 
 
-            {{advartisment.expire}} - {{advartisment.title}} - {{advartisment.location}}<br>
-            <a ng-click="viewAdvartisment(advartisment.id)">detaljno</a>
+            {{advartisment.expire}}<br>
+            {{advartisment.title}} - {{advartisment.location}}<br>
+            {{advartisment.category}}<br>
+            <a ng-click="viewAdvartisment(advartisment.id)">...detaljno</a>
             <hr>
 
         </div>
