@@ -38,30 +38,44 @@
         </div>
         <div class="bs-example">
             <div class="jumbotron">
-    <form>
+    <form name="advartismentForm" ng-submit="submitForm(advartismentForm.$valid)" novalidate>
         <fieldset>
             <label><strong> {{ 'TITLE' | translate }}</strong></label><br>
-            <div class="form-group input-group">
+            <div class="form-group input-group" ng-class="{ 'has-error' : title_invalid(advartismentForm) }">
                 <span class="input-group-addon"></span>
-                <input type="text"  ng-model="formData.newAdvartismentTitle" class="form-control" >
+                <input type="text"  ng-model="formData.newAdvartismentTitle" class="form-control" required autofocus ng-minlength="3" ng-maxlength="255" name="title">
+                <p ng-show="advartismentForm.title.$invalid" class="help-block">Unos naslova oglasa je obavezan. Minimalna duzina je 3 kataktera. </p>
             </div>
 
 
             <label><strong>{{ 'DESCRIPTION' | translate }}</strong></label><br>
-            <textarea class="form-control" style="height: 250px" ng-model="formData.newAdvartismentDescription" placeholder="Type your advartisment here..."></textarea><br>
-            <label><strong>{{ 'LOCATION' | translate }}</strong></label><br>
-            <input class="form-control" type="text"  ng-model="formData.newAdvartismentLocation" class="form-control" >
-          <br>
+            <div class="form-group input-group" ng-class="{ 'has-error' : description_invalid(advartismentForm) }">
+            <textarea class="form-control" name="description" style="height: 250px" ng-model="formData.newAdvartismentDescription" required autofocus ng-minlength="3" ng-maxlength="255"></textarea><br>
+                <p ng-show="advartismentForm.description.$invalid" class="help-block">Unos opisa oglasa je obavezan. Minimalna duzina je 3 kataktera. </p>
+
+            </div>
+                <label><strong>{{ 'LOCATION' | translate }}</strong></label><br>
+            <div class="form-group input-group" ng-class="{ 'has-error' : location_invalid(advartismentForm) }">
+            <input class="form-control" type="text"  name="location" ng-model="formData.newAdvartismentLocation" class="form-control" required autofocus ng-minlength="3" ng-maxlength="255" >
+                <p ng-show="advartismentForm.location.$invalid" class="help-block">Unos lokacije oglasa je obavezan. Minimalna duzina je 3 kataktera. </p>
+
+            </div>
+                <br>
            <label><strong>{{ 'CATEGORY' | translate }}</strong></label><br>
            <select class="form-control" ng-model="formData.newAdvartismentCategory" ng-options="color.name for color in colors"></select><br>
             <label><strong> {{ 'EXPIRE' | translate }}</strong></label><br>
-            <input class="form-control"  ng-model="formData.newAdvartismentExpire" placeholder="New Advartisment" type="date"><br>
-            <br>
-            <button class="btn btn-primary" ng-click="createAdvartisment()">{{ 'CREATE' | translate }}</button>
+            <div class="form-group input-group" ng-class="{ 'has-error' : exipe_invalid(advartismentForm) }">
+
+            <input class="form-control"  name="exipe" ng-model="formData.newAdvartismentExpire" placeholder="New Advartisment" type="date" required autofocus><br>
+                <p ng-show="advartismentForm.expire.$invalid" class="help-block">Odaberite datum. </p>
+
+            </div>
+                <br>
+            <button class="btn btn-primary" ng-click="createAdvartisment()"  ng-disabled="advartismentForm.$invalid">{{ 'CREATE' | translate }}</button>
             <button class="btn btn-danger" ng-click="clearAdvartisment()">{{ 'CLEAR' | translate }} </button>
         </fieldset>
     </form>
-</div>
+           </div>
             <br>
         </div>
     </div>

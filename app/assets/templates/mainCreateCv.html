@@ -35,7 +35,7 @@
             <div class="panel-heading">{{ 'NEWCV' | translate }}</div>
 
 <div class="container" style="margin-top: 40px;" >
-  <form  style="align-content: center" name="cv_submit_form">
+  <form  style="align-content: center" name="cv_submit_form" ng-submit="submitForm(cv_submit_form.$valid)" novalidate>
     <fieldset>
         <div class="row" >
             <div class="col-lg-8" ng-class="{ 'has-error' : title_invalid(cv_submit_form) }">

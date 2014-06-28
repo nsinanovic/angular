@@ -34,25 +34,33 @@
 <div class="col-lg-4" >
     <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
         <fieldset>
-            <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">                <label> {{'FIRSTNAME' | translate}}</label>
-                <input class="form-control" name="name" ng-model="formData.newUserName" placeholder="First name" maxlength="250" minlength = "3">
-                <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
+            <div class="form-group" ng-class="{ 'has-error' : name_invalid(userForm) }">
+                <label> {{'FIRSTNAME' | translate}}</label>
+                <input class="form-control" name="name" ng-model="formData.newUserName" placeholder="First name" required autofocus ng-minlength="3" ng-maxlength="255">
+                <p ng-show="userForm.name.$invalid" class="help-block">Unos prezimena je obavezan. Minimalna duzina je 3 kataktera. </p>
             </div>
-            <div class="form-group">
+            <div class="form-group" ng-class="{ 'has-error' : lastname_invalid(userForm) }">
                 <label>{{'LASTNAME' | translate}}</label>
-                <input class="form-control" ng-model="formData.newUserLastname" placeholder="Last name" maxlength="250" minlength = "3">
+                <input class="form-control" ng-model="formData.newUserLastname" placeholder="Last name" name="lastname" required autofocus ng-minlength="3" ng-maxlength="255">
+                <p ng-show="userForm.lastname.$invalid" class="help-block">Unos prezimena je obavezan. Minimalna duzina je 3 kataktera. </p>
+
             </div>
-            <div class="form-group">
+            <div class="form-group" ng-class="{ 'has-error' : address_invalid(userForm) }">
                 <label>{{'ADDRESS' | translate}}</label>
-                <input class="form-control" ng-model="formData.newUserAddress" placeholder="Address" maxlength="250" minlength = "3">
+                <input class="form-control" ng-model="formData.newUserAddress" placeholder="Address" name="address" required autofocus maxlength="250" minlength = "3">
+                <p ng-show="userForm.address.$invalid" class="help-block">Unos adrese je obavezan. </p>
             </div>
-            <div class="form-group">
+            <div class="form-group" ng-class="{ 'has-error' : phone_invalid(userForm) }">
                 <label>{{'PHONE' | translate}}</label>
-                <input class="form-control" ng-model="formData.newUserPhone" placeholder="Phone number" maxlength="250" minlength = "3">
+                <input class="form-control" ng-model="formData.newUserPhone" placeholder="Phone number" ng-pattern="/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{3})$/"  name="phone" required autofocus  maxlength="250" minlength = "3">
+                <p ng-show="userForm.phone.$invalid" class="help-block">Unos telefona je obavezan. Format: 999-999-999 </p>
+
             </div>
-            <div class="form-group">
+            <div class="form-group" ng-class="{ 'has-error' : email_invalid(userForm) }">
                 <label>{{'EMAIL' | translate}}</label>
-                <input class="form-control" ng-model="formData.newUserEmail" placeholder="Email" maxlength="250" minlength = "3">
+                <input class="form-control" name="email" ng-model="formData.newUserEmail" ng-pattern=" /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/" placeholder="Email" required autofocus maxlength="250" minlength = "3">
+                <p ng-show="userForm.email.$invalid" class="help-block">Unos emaila je obavezan.</p>
+
             </div>
             <div class="form-group">
                 <label>{{'PW' | translate}}</label>
@@ -64,7 +72,7 @@
             </div>
 
             <br>
-            <button class="btn btn-primary" ng-click="createUser()">{{'CREATE' | translate}}</button>
+            <button class="btn btn-primary" ng-click="createUser()"  ng-disabled="userForm.$invalid">{{'CREATE' | translate}}</button>
             <button class="btn btn-default" ng-click="clearUser()">{{'CLEAR' | translate}}</button>
 
             <input class="form-control"  ng-model="formData.newUserUsername" style="visibility: hidden">
