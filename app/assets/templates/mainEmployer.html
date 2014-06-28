@@ -5,10 +5,7 @@
         <h2>Berza poslova <small>beta version 1.1</small></h2>
     </div>
     <div class="col-lg-4">
-        <div style="text-align: right">
-            <a ng-click="changeLanguage('ba')" data-no-turbolink="true">BS </a> ||
-            <a ng-click="changeLanguage('en')" data-no-turbolink="true">EN</a>
-        </div>
+
         <div class="breadcrumb">
             <form role="form">
                 <div class="form-group input-group">
@@ -31,7 +28,7 @@
 <div class="row">
 
     <div class="col-lg-8">
-        <span class="avatar"><img src="http://placehold.it/100x200"></span>
+        <span class="avatar"><img src="http://placehold.it/200x100"></span>
 
 
         <div class="page-header">
@@ -44,7 +41,7 @@
                 {{data.currentEmployer.email}} <br>
                 <b> Location: </b>
                 {{data.currentEmployer.location}} <br>
-                <b> Website : </b>
+                <b> Website: </b>
                 {{data.currentEmployer.website}}<br>
 
             </div>
@@ -56,32 +53,20 @@
 
 
     </div>
-
     <div class="col-lg-4">
         <div class="bs-example">
             <ul class="list-group">
                 <li class="list-group-item">
-                    <span class="badge">  {{data.currentEmployer.created_at}}</span>
-                    Datum registrovanja poslodavca
+                    <span class="badge" >  {{data.currentEmployer.created_at}}</span>
+                    Datum registracije
                 </li>
 
-                <li class="list-group-item">
-                    <span class="badge">5</span>
-                    Broj mojih oglasa
-                </li>
+
             </ul>
         </div>
         <hr>
-        <div class="panel panel-default">
-            <div class="panel-heading">{{'NOTIFICATION' | translate}}</div>
-            <div class="panel-body">
-                Ekonomija
-            </div>
-            <div class="panel-body">
-                Bankarstvo
-            </div>
-        </div>
-        <hr>
+
+
         <div class="bs-example">
             <ul class="list-group">
                 <li class="list-group-item">
@@ -92,24 +77,15 @@
                     <span class="badge">>></span>
                     <a href="/employer/edit"> Edit profile</a>
                 </li>
+                <li class="list-group-item">
+                    <span class="badge">>></span>
+                    <a href="/#/myadvartisment/{{data.currentEmployer.name}}"> Moji oglasi</a>
+                </li>
 
             </ul>
         </div>
         <hr>
-        <div class="bs-example">
-            <div class="list-group">
-                <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">Advartisment</h4>
-                    <p class="list-group-item-text"> Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
 
-
-                </a>
-                <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">Advartismnent</h4>
-                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                </a>
-            </div>
-        </div>
 
 
 

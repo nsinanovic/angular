@@ -1,4 +1,8 @@
-@CreateNotificationCtrl = ($scope, $location, $routeParams, notificationData, kategorijaData, userData, advartismentData) ->
+@CreateNotificationCtrl = ($scope, $location, $routeParams, notificationData, kategorijaData, userData, advartismentData, $translate) ->
+
+  $translate.use('ba')
+  $scope.changeLanguage  = (key) ->
+    $translate.use(key)
 
   $scope.data = notificationData.data
   notificationData.loadNotifications(null)
@@ -78,4 +82,4 @@
 
 
 
-@CreateNotificationCtrl.$inject = ['$scope',  '$location', '$routeParams','notificationData', 'kategorijaData', 'userData', 'advartismentData']
+@CreateNotificationCtrl.$inject = ['$scope',  '$location', '$routeParams','notificationData', 'kategorijaData', 'userData', 'advartismentData', '$translate']

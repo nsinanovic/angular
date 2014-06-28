@@ -1,4 +1,4 @@
-@EmployerCtrl = ($scope, $routeParams, $location, $q, employerData, $translate) ->
+@EmployerCtrl = ($scope, $routeParams, $location, $q, employerData, advartismentData, $translate) ->
 
   $translate.use('ba')
 
@@ -16,6 +16,12 @@
       created_t:''
 
   $scope.data.employerId = $routeParams.employerId
+
+  $scope.data2 = advartismentData.data
+  advartismentData.loadAdvartisments(null)
+
+  $scope.brojac =0
+
 
   $scope.navNewEmployer = ->
     $location.url('/employer/new')
@@ -42,4 +48,4 @@
   employerData.loadEmployers(@deferred)
 
 
-@EmployerCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'employerData', '$translate']
+@EmployerCtrl.$inject = ['$scope', '$routeParams', '$location', '$q', 'employerData', 'advartismentData','$translate']

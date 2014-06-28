@@ -45,7 +45,7 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav side-nav">
 
-        <li>  <a href="#">  {{'HOME' | translate}} </a> </li>
+        <li>  <a href="/#">  {{'HOME' | translate}} </a> </li>
         <li>  <a href="/#/about">  {{'ABOUT' | translate}} </a> </li>
         <li>  <a href="/#/contact">  {{'CONTACT' | translate}} </a> </li>
         <% if current_user %>
@@ -109,16 +109,6 @@
 
 
       <div ng-view>      </div>
-
-  <% if current_user %> neko je logovan
-      <% if current_user.email=="admin@poso.ba"%> admin je logovan <%end%>
-  <%elsif current_employer %> employer je logovan
-  <% else %> nije niko logovan
-  <% end %>
-
-
-
-
 
 
 
