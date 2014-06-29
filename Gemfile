@@ -13,7 +13,8 @@ group :assets do
   gem 'bootstrap-sass', '~> 2.3.1.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', platforms: :ruby
+
+   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -21,7 +22,7 @@ end
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
@@ -40,3 +41,8 @@ gem 'gmaps4rails' , '~> 1.5.6'
 # gem 'debugger'
 
 gem 'polylines'
+
+group :production do
+  gem 'rails_12factor'
+end
+

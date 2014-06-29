@@ -17,11 +17,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: blog_d
+
   pool: 5
-  username: postgres
-  password: root
-  port: 5433
+
+
 
 
 
@@ -50,11 +49,10 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: blog_t
+
   pool: 5
-  username: postgres
-  password: root
-  port: 5433
+
+
 
 
 
@@ -62,10 +60,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: blog_p
+
   pool: 5
-  username: postgres
-  password: root
-  port: 5433
+
+
 
 

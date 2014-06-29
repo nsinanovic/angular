@@ -28,39 +28,6 @@ ActiveRecord::Schema.define(version: 20140627145134) do
     t.string   "employer"
   end
 
-  create_table "biografijas", force: true do |t|
-    t.string   "pozicija"
-    t.string   "poslodavac"
-    t.string   "lokacija"
-    t.string   "pocetakRada"
-    t.string   "drzava"
-    t.string   "zavrsetakRada"
-    t.string   "preporuke"
-    t.string   "opisPosla"
-    t.string   "jezik"
-    t.string   "strucnaSprema"
-    t.string   "stepen"
-    t.string   "obrazovnaUstanova"
-    t.string   "titula"
-    t.string   "smjer"
-    t.string   "opis"
-    t.string   "pocetak"
-    t.string   "vjestina"
-    t.string   "zavrsetak"
-    t.string   "komentar"
-    t.string   "stepenObrazovanja"
-    t.string   "kompetencije"
-    t.string   "ostalo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "categories", force: true do |t|
-    t.string   "naziv"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "cvs", force: true do |t|
     t.string   "naslov"
     t.string   "dodatno"
@@ -87,36 +54,11 @@ ActiveRecord::Schema.define(version: 20140627145134) do
     t.datetime "updated_at"
   end
 
-  create_table "jeziks", force: true do |t|
-    t.string   "jezik"
-    t.string   "stepen"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "kategorijas", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "korisniks", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "korisniks", ["email"], name: "index_korisniks_on_email", unique: true, using: :btree
-  add_index "korisniks", ["reset_password_token"], name: "index_korisniks_on_reset_password_token", unique: true, using: :btree
 
   create_table "locations", force: true do |t|
     t.string   "name"
@@ -140,35 +82,11 @@ ActiveRecord::Schema.define(version: 20140627145134) do
   add_index "notifications", ["kategorija_id"], name: "index_notifications_on_kategorija_id", using: :btree
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
 
-  create_table "obrazovanjes", force: true do |t|
-    t.string   "obrazovnaUstanova"
-    t.string   "smjer"
-    t.string   "titula"
-    t.string   "opis"
-    t.string   "pocetak"
-    t.string   "zavrsetak"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "contents"
     t.string   "author"
     t.datetime "post_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "radno_iskustvos", force: true do |t|
-    t.string   "pozicija"
-    t.string   "poslodavac"
-    t.string   "lokacija"
-    t.string   "drzava"
-    t.string   "pocetakRada"
-    t.string   "zavrsetakRada"
-    t.string   "opisPosla"
-    t.string   "preporuke"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -186,14 +104,6 @@ ActiveRecord::Schema.define(version: 20140627145134) do
     t.string   "address"
     t.string   "phone"
     t.string   "username"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "vjestines", force: true do |t|
-    t.string   "vjestina"
-    t.string   "stepenPoznavanja"
-    t.string   "komentar"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
