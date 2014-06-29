@@ -1,0 +1,99 @@
+<div class="row" >
+
+    <div class="col-lg-8">
+
+        <h2>Berza poslova <small>beta version 1.1</small></h2>
+    </div>
+    <div class="col-lg-4">
+
+        <div class="breadcrumb">
+            <form role="form">
+                <div class="form-group input-group">
+
+                    <input type="text" class="form-control"  ng-model="searchText">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" disabled="disabled">{{'SEARCH' | translate}}</button>
+                </span>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<hr>
+
+<div class="row">
+
+    <div class="col-lg-8">
+        <span class="avatar"><img src="http://placehold.it/200x100"></span>
+
+
+
+        <div class="page-header">
+            <h1 id="container"> {{'INFORMATION' | translate }} </h1>
+        </div>
+        <div class="bs-example">
+            <div class="jumbotron">
+                <h2>{{data.currentEmployer.name}}  </h2>
+                <b>{{'EMAIL' | translate}}: </b>
+                {{data.currentEmployer.email}} <br>
+                <b> Location: </b>
+                {{data.currentEmployer.location}} <br>
+                <b> Website: </b>
+                {{data.currentEmployer.website}}<br>
+
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+    <div class="col-lg-4">
+        <div class="bs-example">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="badge" >  {{data.currentEmployer.created_at}}</span>
+                    Datum registracije
+                </li>
+
+
+            </ul>
+        </div>
+        <hr>
+
+
+        <div class="bs-example">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="badge">>></span>
+                    <a href="/#/advartisment/new"> New advartisment</a>
+                </li>
+                <li class="list-group-item">
+                    <span class="badge">>></span>
+                    <a href="/#/employer/edit/{{data.currentEmployer.id}}"> Edit profile</a>
+                </li>
+                <li class="list-group-item">
+                    <span class="badge">>></span>
+                    <a href="/#/myadvartisment/{{data.currentEmployer.name}}"> Moji oglasi</a>
+                </li>
+
+            </ul>
+        </div>
+        <hr>
+
+
+
+
+
+
+    </div>
+
+
+
+</div>

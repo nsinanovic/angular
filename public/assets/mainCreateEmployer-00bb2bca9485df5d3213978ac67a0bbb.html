@@ -1,0 +1,68 @@
+<div class="row" >
+
+    <div class="col-lg-8">
+
+        <h2>Berza poslova <small>beta version 1.1</small></h2>
+    </div>
+    <div class="col-lg-4">
+
+        <div class="breadcrumb">
+            <form role="form">
+                <div class="form-group input-group">
+
+                    <input type="text" class="form-control"  ng-model="searchText">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" disabled="disabled">{{'SEARCH' | translate}}</button>
+                </span>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<hr>
+        <div class="row">
+<div class="col-lg-4" >
+    <form  name="employerForm" ng-submit="submitForm(employerForm.$valid)" novalidate>
+        <fieldset>
+            <div class="form-group" ng-class="{ 'has-error' : name_invalid(employerForm) }">
+                <label>{{ 'FIRST' | translate }} </label>
+                <input class="form-control" name="name" ng-model="formData.newEmployerName" placeholder="" required autofocus ng-minlength="3" ng-maxlength="255">
+                <small ng-show="employerForm.name.$invalid" class="help-block">Unos naziva firme je obavezan. Minimalna duzina je 3 kataktera. </small>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : email_invalid(employerForm)}">
+                <label>{{ 'EMAIL' | translate }} </label>
+                <input name="email" class="form-control" ng-model="formData.newEmployerEmail" ng-pattern=" /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/" placeholder="" required autofocus maxlength="250" minlength = "3">
+                <small ng-show="employerForm.email.$invalid" class="help-block"> Unos email-a u ispravnom formatu je obavezan.</small>
+            </div>
+            <div class="form-group">
+                <label>{{ 'PW' | translate }} </label>
+                <input class="form-control" type="password" ng-model="formData.newEmployerPassword" placeholder="Password" maxlength="250" minlength = "3">
+            </div>
+            <div class="form-group" >
+                <label>{{ 'RPW' | translate }} </label>
+                <input class="form-control"  type="password" ng-model="formData.newEmployerProvjera" placeholder="Password">
+
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : location_invalid(employerForm) }">
+                <label>{{ 'LOCATION' | translate }} </label>
+                <input class="form-control" name="location" ng-model="formData.newEmployerLocation" placeholder="Location"  required autofocus maxlength="250" minlength = "3">
+                <small ng-show="employerForm.location.$invalid" class="help-block">Unos lokacije firme je obavezan.</small>
+            </div>
+            <div class="form-group">
+                <label>{{ 'WEBSITE' | translate }} </label>
+                <input class="form-control" ng-model="formData.newEmployerWebsite" placeholder="Website" maxlength="250" minlength = "3">
+            </div>
+            <br>
+            <button class="btn btn-primary" ng-click="createEmployer()"  ng-disabled="employerForm.$invalid">{{ 'CREATE' | translate }} </button>
+            <button class="btn btn-default" ng-click="clearEmployer()">{{ 'CLEAR' | translate }} </button>
+
+
+        </fieldset>
+    </form>
+
+</div>
+</div>
