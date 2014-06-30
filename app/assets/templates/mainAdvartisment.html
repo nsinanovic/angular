@@ -86,9 +86,9 @@
                 <div class="bs-example">
                     <h3>Ostali oglasi od {{data.currentAdvartisment.employer}}</h3>
                     <div class="list-group"  ng-repeat="adv in data1.advartisments | filter: data.currentAdvartisment.employer" >
-                        <a ng-click="viewAdvartisment(adv.id)" class="list-group-item" >
+                        <a class="list-group-item" >
                             <h4 class="list-group-item-heading">{{adv.title}}</h4>
-                            <p class="list-group-item-text" >Pogledajte ovaj oglas</p>
+                            <p class="list-group-item-text"  > <a ng-click="viewAdvartisment(adv.id)">Pogledajte ovaj oglas</a></p>
                         </a>
                     </div>
                 </div>

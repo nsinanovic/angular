@@ -63,6 +63,7 @@
 
   $scope.createAdvartisment = ->
     advartismentData.createAdvartisment($scope.formData,$scope.datum)
+    $location.url('/')
 
   $scope.clearAdvartisment = ->
     $scope.formData.newAdvartismentTitle = ''

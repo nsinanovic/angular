@@ -17,7 +17,6 @@
 development:
   adapter: postgresql
   encoding: unicode
-
   pool: 5
 
 
@@ -49,8 +48,8 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-
   pool: 5
+
 
 
 
@@ -60,8 +59,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-
   pool: 5
+
 
 
 

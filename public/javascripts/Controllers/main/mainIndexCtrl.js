@@ -1,4 +1,4 @@
-this.IndexCtrl = function($scope, $location, $http, advartismentData, userData, employerData, $translate) {
+angular.module('Blog').controller('IndexCtrl', function($scope, $location, $http, advartismentData, userData, employerData, $translate) {
     $translate.use('ba');
     $scope.changeLanguage = function(key) {
         return $translate.use(key);
@@ -15,6 +15,6 @@ this.IndexCtrl = function($scope, $location, $http, advartismentData, userData, 
     return $scope.navNewAdvartisment = function() {
         return $location.url('/advartisment/new');
     };
-};
+} );
 
-this.IndexCtrl.$inject = ['$scope', '$location', '$http', 'advartismentData', 'userData', 'employerData', '$translate'];
+Blog.controller('IndexCtrl').$inject = ['$scope', '$location', '$http', 'advartismentData', 'userData', 'employerData', '$translate'];
