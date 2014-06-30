@@ -317,7 +317,7 @@ Blog.config([
             controller: 'IndexCtrl'
         });
         return $routeProvider.otherwise({
-            templateUrl: '../assets/mainIndex.html',
+            templateUrl: '../assets/templates/mainIndex.html',
             controller: 'IndexCtrl'
         });
     }
