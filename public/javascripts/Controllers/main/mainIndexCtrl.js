@@ -12,7 +12,7 @@ angular.module('Blog').controller('IndexCtrl', function($scope, $location, $http
     $scope.viewAdvartisment = function(advartismentId) {
         return $location.url('/advartisment/' + advartismentId);
     };
-    return $scope.navNewAdvartisment = function() {
+    $scope.navNewAdvartisment = function() {
         return $location.url('/advartisment/new');
     };
 } );
