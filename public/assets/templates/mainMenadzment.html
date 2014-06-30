@@ -1,0 +1,119 @@
+<div class="row">
+
+    <div class="col-lg-8">
+
+        <h2>Berza poslova <small>beta version 1.1</small></h2>
+    </div>
+    <div class="col-lg-4">
+        <div class="breadcrumb">
+            <form role="form">
+                <div class="form-group input-group">
+
+                    <input type="text" class="form-control"  ng-model="searchText">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" disabled="disabled">Search</button>
+                </span>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row"  >
+        <div class="col-lg-8">
+            <div class="col-lg-4"  ng-repeat="advartisment in data.advartisments | filter:'Menadžment i upravljanje'| filter:searchText">
+
+                <span class="avatar"><img src="http://placehold.it/200x100"></span><br>
+
+                {{advartisment.title}} - {{advartisment.location}}<br>
+                <a ng-click="viewAdvartisment(advartisment.id)">Read more</a>
+                <hr>
+
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Filtriraj po lokaciji <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://localhost:3000">Sve lokacije </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentlokacija/sarajevo">Sarajevo </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentlokacija/banjaluka">Banja Luka</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentlokacija/mostar">Mostar</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentlokacija/zenica">Zenica</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentlokacija/tuzla">Tuzla</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentlokacija/bihac">Bihać</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentlokacija/travnik">Travnik</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentlokacija/zavidovici">Zavidovići</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentlokacija/brcko">Brčko</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Filtriraj po kategorijama <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/administrativne">Administrativne usluge </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/bankarstvo">Bankarstvo </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/biotehnologija">Biotehnologija i farmacija</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/drvna">Drvna industrija</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/drzavna">Državna služba i uprava</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/ekonomija">Ekonomija i finansije </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/elektrotehnika">Elektrotehnika i informatika </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/energetika">Energetika i rudarstvo</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/frizeri">Frizeri i kozmetičari </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/geologija">Geologija</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/gradjevinarstvo">Građevinarstvo i arhitektura </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/komercijala">Komercijala i prodaja</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/konsalting">Konsalting</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/marketing">Marketing i PR</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/masinstvo">Mašinstvo i metalurgija </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/mediji">Mediji </a>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/mendazment">Menadžment i upravljanje </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/obrazovanje">Obrazovanje, kultura i sport </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/osiguranje">Osiguranje </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/ostalo">Ostalo</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/policija">Policija i zaštitarske usluge</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/politicke">Političke nauke </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/poljoprivreda">Poljoprivreda i šumarstvo </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/pravo">Pravo i društvene nauke</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/prevodilacke">Prevodilačke usluge </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/proizvodnja">Proizvodnja</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/racunovodstvo">Računovodstvo i revizija</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/socijalne">Socijalne usluge</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/stipendije">Stipendije </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/teleprodaja">Teleprodaja i telemarketing</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/transport">Transport i skladištenje</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/trgovina">Trgovina </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/ugostiteljstvo">Ugostiteljstvo i turizam </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/umjetnost">Umjetnost i dizajn</a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/zanatske">Zanatske usluge </a></li>
+                            <li><a href="http://localhost:3000/#/advartismentkategorija/zdravstvo">Zdravstvo i medicina  </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="bs-example">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">{{data.advartisments.length}}</span>
+                        Ukupan broj objavljenih oglasa
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{data1.users.length}}</span>
+                        Ukupan broj registriranih korisnika
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{data2.employers.length}}</span>
+                        Ukupan broj registriranih firmi
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>

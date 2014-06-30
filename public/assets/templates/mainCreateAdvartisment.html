@@ -1,0 +1,80 @@
+<div class="row" >
+
+    <div class="col-lg-8">
+
+        <h2>Berza poslova <small>beta version 1.1</small></h2>
+    </div>
+    <div class="col-lg-4">
+
+        <div class="breadcrumb">
+            <form role="form">
+                <div class="form-group input-group">
+
+                    <input type="text" class="form-control"  ng-model="searchText">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" disabled="disabled">{{'SEARCH' | translate}}</button>
+                </span>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<hr>
+
+
+<div class="row">
+
+    <div class="col-lg-8">
+
+        <div class="page-header">
+            <h1 id="container">{{'NEWADVARTISMENT' |translate}}</h1>
+        </div>
+        <div class="bs-example">
+            <div class="jumbotron">
+    <form name="advartismentForm" ng-submit="submitForm(advartismentForm.$valid)" novalidate>
+        <fieldset>
+            <label><strong> {{ 'TITLE' | translate }}</strong></label><br>
+            <div ng-class="{ 'has-error' : title_invalid(advartismentForm) }">
+                <input type="text"  ng-model="formData.newAdvartismentTitle" class="form-control" required autofocus ng-minlength="3" ng-maxlength="255" name="title">
+                <small ng-show="advartismentForm.title.$invalid" class="help-block">Unos naslova oglasa je obavezan. Minimalna duzina je 3 kataktera. </small>
+            </div>
+
+
+            <label><strong>{{ 'DESCRIPTION' | translate }}</strong></label><br>
+            <div  ng-class="{ 'has-error' : description_invalid(advartismentForm) }">
+            <textarea class="form-control" name="description" style="height: 250px" ng-model="formData.newAdvartismentDescription" required autofocus ng-minlength="3" ng-maxlength="255"></textarea><br>
+                <small ng-show="advartismentForm.description.$invalid" class="help-block">Unos opisa oglasa je obavezan. Minimalna duzina je 3 kataktera. </small>
+
+            </div>
+                <label><strong>{{ 'LOCATION' | translate }}</strong></label><br>
+            <div  ng-class="{ 'has-error' : location_invalid(advartismentForm) }">
+            <input class="form-control" type="text"  name="location" ng-model="formData.newAdvartismentLocation" class="form-control" required autofocus ng-minlength="3" ng-maxlength="255" >
+                <small ng-show="advartismentForm.location.$invalid" class="help-block">Unos lokacije oglasa je obavezan. Minimalna duzina je 3 kataktera. </small>
+
+            </div>
+                <br>
+           <label><strong>{{ 'CATEGORY' | translate }}</strong></label><br>
+            <div  ng-class="{ 'has-error' : category_invalid(advartismentForm) }">
+            <select class="form-control" name="category"  ng-model="formData.newAdvartismentCategory" ng-options="color.name for color in colors" required autofocus></select><br>
+                <small ng-show="advartismentForm.category.$invalid" class="help-block">Odaberite kategoriju. </small>
+            </div>
+                <label><strong> {{ 'EXPIRE' | translate }}</strong></label><br>
+            <div  ng-class="{ 'has-error' : exipe_invalid(advartismentForm) }">
+            <input class="form-control"  name="expire" ng-model="formData.newAdvartismentExpire" placeholder="New Advartisment" type="date" required autofocus><br>
+                <small ng-show="advartismentForm.expire.$invalid" class="help-block">Odaberite datum.</small>
+
+            </div>
+                <br>
+            <button class="btn btn-primary" ng-click="createAdvartisment()"  ng-disabled="advartismentForm.$invalid">{{ 'CREATE' | translate }}</button>
+            <button class="btn btn-danger" ng-click="clearAdvartisment()">{{ 'CLEAR' | translate }} </button>
+        </fieldset>
+    </form>
+           </div>
+            <br>
+        </div>
+    </div>
+</div>

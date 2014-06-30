@@ -1,0 +1,100 @@
+
+<div class="row" >
+
+    <div class="col-lg-8">
+
+        <h2>Berza poslova <small>beta version 1.1</small></h2>
+    </div>
+    <div class="col-lg-4">
+
+        <div class="breadcrumb">
+            <form role="form">
+                <div class="form-group input-group">
+
+                    <input type="text" class="form-control"  ng-model="searchText">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" disabled="disabled">{{'SEARCH' | translate}}</button>
+                </span>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<hr>
+<div class="row">
+
+    <div class="col-lg-8">
+        <span class="avatar"><img src="http://placehold.it/200x100"></span>
+
+
+            <div class="page-header">
+                <h1 id="container">{{data.currentAdvartisment.employer}}</h1>
+            </div>
+            <div class="bs-example">
+                <div class="jumbotron">
+                    <h2>{{data.currentAdvartisment.title}}</h2>
+                    <h6>{{data.currentAdvartisment.description}}</h6>
+
+                </div>
+            </div>
+
+
+
+
+
+    </div>
+
+        <div class="col-lg-4">
+            <div class="bs-example">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">{{data.currentAdvartisment.days}}</span>
+                        Datum objavljivanja oglasa
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{data.currentAdvartisment.expire}}</span>
+                        Datum isteka oglasa
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{datum}}</span>
+                        Današnji datum
+                    </li>
+                </ul>
+            </div>
+<hr>
+            <ul class="breadcrumb">
+                <li class="active">
+                    Kategorija: {{data.currentAdvartisment.category}}
+                </li>
+            </ul>
+            <ul class="breadcrumb" ng-repeat="employer in data2.employers | filter:data.currentAdvartisment.employer">
+                <li class="active" >
+                    Web page: {{employer.website}}
+                    <button type="button" ><a href="http://{{employer.website}}" target="_blank">Posjeti stranicu</a></button>
+                </li>
+            </ul>
+            <ul class="breadcrumb">
+                <li class="active">
+                    Lokacija: {{data.currentAdvartisment.location}}
+                </li>
+            </ul>
+<hr>
+                <div class="bs-example">
+                    <h3>Ostali oglasi od {{data.currentAdvartisment.employer}}</h3>
+                    <div class="list-group"  ng-repeat="adv in data1.advartisments | filter: data.currentAdvartisment.employer" >
+                        <a ng-click="viewAdvartisment(adv.id)" class="list-group-item" >
+                            <h4 class="list-group-item-heading">{{adv.title}}</h4>
+                            <p class="list-group-item-text" >Pogledajte ovaj oglas</p>
+                        </a>
+                    </div>
+                </div>
+
+        </div>
+
+
+
+</div>
