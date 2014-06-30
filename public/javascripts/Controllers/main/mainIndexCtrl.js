@@ -1,5 +1,5 @@
-angular.module('Blog').controller('IndexCtrl', function($scope, $location, $http, advartismentData, userData, employerData, $translate) {
-    $translate.use('ba');
+angular.module("Blog").controller("IndexCtrl", function($scope, $location, $http, advartismentData, userData, employerData, $translate) {
+    $translate.use("ba");
     $scope.changeLanguage = function(key) {
         return $translate.use(key);
     };
@@ -10,11 +10,9 @@ angular.module('Blog').controller('IndexCtrl', function($scope, $location, $http
     $scope.data2 = employerData.data;
     employerData.loadEmployers(null);
     $scope.viewAdvartisment = function(advartismentId) {
-        return $location.url('/advartisment/' + advartismentId);
+        return $location.url("/advartisment/" + advartismentId);
     };
-    $scope.navNewAdvartisment = function() {
-        return $location.url('/advartisment/new');
-    };
-} );
 
-Blog.controller('IndexCtrl').$inject = ['$scope', '$location', '$http', 'advartismentData', 'userData', 'employerData', '$translate'];
+});
+
+Blog.controller("IndexCtrl").$inject = ["$scope", "$location", "$http", "advartismentData", "userData", "employerData", "$translate"];
